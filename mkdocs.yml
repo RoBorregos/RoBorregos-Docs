@@ -1,0 +1,6 @@
+site_name: RoBorregos Docs
+theme:
+  name: material
+  highlightjs: true
+  logo: "assets/logo.png"
+  favicon: "assets/favicon.png"
