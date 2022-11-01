@@ -39,6 +39,7 @@ Example:
     2. Item 2.2
 ```
 Example output:
+
 - Item 1
 - Item 2
     - Item 2.1
@@ -145,6 +146,7 @@ Example:
 - [x] Done ToDo
 ```
 Example output:
+
 - [ ] ToDo
 - [x] Done ToDo
 
