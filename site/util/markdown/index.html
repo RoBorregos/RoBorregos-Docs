@@ -478,15 +478,21 @@
     1. Item 2.1
     2. Item 2.2
 </code></pre>
-<p>Example output:
-- Item 1
-- Item 2
-    - Item 2.1
-    - Item 2.2
-1. Item 1
-2. Item 2
-    1. Item 2.1
-    2. Item 2.2</p>
+<p>Example output:</p>
+<ul>
+<li>Item 1</li>
+<li>Item 2<ul>
+<li>Item 2.1</li>
+<li>Item 2.2</li>
+</ul>
+</li>
+<li>Item 1</li>
+<li>Item 2<ol>
+<li>Item 2.1</li>
+<li>Item 2.2</li>
+</ol>
+</li>
+</ul>
 <h2 id="links">Links</h2>
 <p>You can create links using the <code>[text](link)</code> sintax.</p>
 <p>Example:</p>
@@ -565,9 +571,11 @@
 <pre><code>- [ ] ToDo 
 - [x] Done ToDo
 </code></pre>
-<p>Example output:
-- [ ] ToDo
-- [x] Done ToDo</p>
+<p>Example output:</p>
+<ul>
+<li>[ ] ToDo</li>
+<li>[x] Done ToDo</li>
+</ul>
 
 
 
