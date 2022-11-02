@@ -56,11 +56,11 @@ You can create links using the `[text](link)` sintax.
 Example:
 ```{markdown}
 [RoBorregos](
-    www.roborregos.com
+    https://www.roborregos.com
 )
 ```
 Example output:
-[RoBorregos](www.roborregos.com)
+[RoBorregos](https://www.roborregos.com)
 
 ## Images
 

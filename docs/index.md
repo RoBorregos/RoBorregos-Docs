@@ -1,17 +1,25 @@
-# Welcome to MkDocs
+# Welcome to RoBorregos Documentation
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+This is the documentation for RoBorregos. Here you can find information about the team, the projects we have worked on, and the tools we use.
 
-## Commands
+## RoBorregos
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+RoBorregos is the Tecnológico de Monterrey's International Robotics Representative Team. We are a team of students passionate about robotics and technology that have several projects in which we participate. To learn more about us, visit our [website](https://www.roborregos.com).
 
-## Project layout
+## Sections
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+- [Projects](projects.md)
+- [Util](util/markdown.md)
+
+## Tools
+
+- [ROS](https://www.ros.org/)
+
+
+### Development team
+
+| Name                    | Email                                                               | Github                                                       | Role      |
+| ----------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------ | --------- |
+| Iván Romero | [i.wells.ar@gmail.com](mailto:i.wells.ar@gmail.com) | [@IvanRomero03](https://github.com/IvanRomero03) | Software Developer, Repo Mantainer and Automatization |
+| Vic | [@gmail.com](mailto:@gmail.com) | [@](https://github.com/) | Software Developer, Repo Mantainer and Automatization | /* @victoriagdlf */
+| Kevin | [@gmail.com](mailto:@gmail.com) | [@](https://github.com/) | PM | /* @KevinVegaTec */
