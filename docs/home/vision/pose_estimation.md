@@ -8,13 +8,13 @@ It's very simple, acurate and fast. It's also very easy to use, since it's a pre
 
 First of all, you need to install MediaPipe. You can do it by running the following command:
 
-```{bash}
+```bash
 pip install mediapipe
 ```
 
 Then, you can use the following code to get the pose estimation:
 
-```{python}
+```python
 import mediapipe as mp
 
 # Calling the pose solution from MediaPipe
@@ -39,7 +39,7 @@ As a result, you'll have a `poseResult` array of points. That each point represe
 
 You can also use pose estimation with a webcam to get streamed video. You can use the following code to do it:
 
-```{python}
+```python
 import mediapipe as mp
 
 import cv2
@@ -96,7 +96,7 @@ Example:
 
 You can receive the image source from a ROS topic. You can use the following code to do it:
 
-```{python}
+```python
 import mediapipe as mp
 from time import sleep
 from typing import Tuple

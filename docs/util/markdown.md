@@ -7,7 +7,7 @@ Markdown is a simple markup language that allows you to write using a simple sin
 Headings are created using the `#` symbol. The more `#` you use, the smaller the heading will be.
 
 Example:
-```{markdown}
+```markdown
 # Heading 1
 ## Heading 2
 ### Heading 3
@@ -19,7 +19,7 @@ Example:
 Text is written as it is. You can use **bold** and *italic* text. You can also use ~~strikethrough~~ text. 
 
 Example:
-```{markdown}
+```markdown
 This is a normal text. You can use **bold** and *italic* text. You can also use ~~strikethrough~~ text. 
 ```
 
@@ -28,7 +28,7 @@ This is a normal text. You can use **bold** and *italic* text. You can also use 
 You can create lists using the `-` symbol. You can also create numbered lists using the `1.` symbol.
 
 Example:
-```{markdown}
+```markdown
 - Item 1
 - Item 2
     - Item 2.1
@@ -54,7 +54,7 @@ Example output:
 You can create links using the `[text](link)` sintax.
 
 Example:
-```{markdown}
+```markdown
 [RoBorregos](
     https://www.roborregos.com
 )
@@ -67,7 +67,7 @@ Example output:
 Similar to links, you can add images using the `![alt text](image link)` sintax.
 
 Example:
-```{markdown}
+```markdown
 ![RoBorregos Logo](https://github.com/RoBorregos.png)
 ```
 Example output:
@@ -78,20 +78,20 @@ Example output:
 You can add code using the `` ` `` symbol. You can also add code blocks using the ``` symbol.
 
 Example:
-```{markdown}
+```markdown
 `print("Hello World")`
 ```
 Example output:
 `print("Hello World")`
 
 Example:
-```{markdown}
-    ```{python}
+```markdown
+    ```python
     print("Hello World")
     ```
 ```
 Example output:
-```{python}
+```python
 print("Hello World")
 ```
 

@@ -4,3 +4,12 @@ theme:
   highlightjs: true
   logo: "assets/logo.png"
   favicon: "assets/favicon.png"
+  features:
+    - content.code.annotate
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
