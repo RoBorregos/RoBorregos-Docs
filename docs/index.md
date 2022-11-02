@@ -16,7 +16,7 @@ RoBorregos is the Tecnológico de Monterrey's International Robotics Representat
 - [ROS](https://www.ros.org/)
 
 
-### Development team
+## Development team
 
 | Name                    | Email                                                               | Github                                                       | Role      |
 | ----------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------ | --------- |
