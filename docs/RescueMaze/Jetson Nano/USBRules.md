@@ -3,7 +3,7 @@
 
 Here is an example of how we can se the behaviour of the usb ports.
 
-![USB Ports Behaviour](../assets/maze/ports_behaviour.jpeg)
+![USB Ports Behaviour](../../assets/maze/ports_behaviour.jpeg)
 
 ## Udev Rules
 
@@ -13,7 +13,7 @@ To automate the USB ports, we need to create a rule for each port. The rule will
 
 Here is the hard investigation we did to determine the rules:
 
-![example1](../assets/maze/chat_gpt0.jpeg)
+![example1](../../assets/maze/chat_gpt0.jpeg)
 
-![example2](../assets/maze/chat_gpt1.jpeg)
+![example2](../../assets/maze/chat_gpt1.jpeg)
 
