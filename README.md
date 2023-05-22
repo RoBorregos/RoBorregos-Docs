@@ -9,7 +9,7 @@ Welcome to the RoBorregos Official documentation. This documentation is based on
 | ----------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------ | --------- |
 | Iván Romero | [i.wells.ar@gmail.com](mailto:i.wells.ar@gmail.com) | [@IvanRomero03](https://github.com/IvanRomero03) | Software Developer, Repo Mantainer and Automatization |
 | Vic | [@gmail.com](mailto:@gmail.com) | [@](https://github.com/) | Software Developer, Repo Mantainer and Automatization | /* @victoriagdlf */
-| Kevin | vegakevinrdz[@gmail.com](mailto:vegakevinrdz@gmail.com) | [@KevinVegaTec](https://github.com/KevinVegaTec) | PM | /* @KevinVegaTec */
+| Kevin | [vegakevinrdz@gmail.com](mailto:vegakevinrdz@gmail.com) | [@KevinVegaTec](https://github.com/KevinVegaTec) | PM | /* @KevinVegaTec */
 
 
 ## Add new page
