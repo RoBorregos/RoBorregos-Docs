@@ -9,3 +9,4 @@ See the [rules](https://junior.robocup.org/wp-content/uploads/2023/01/RCJRescueM
 ## Sections
 
 - [Jetson Nano](Jetson Nano/RunningJetson/)
+- [Control](Control/)
