@@ -11,6 +11,7 @@ The Object Detection module is focused on produce a highly accurate while fast o
 ![Object Detection API Model Sample](../../../assets/home/ObjectDetection/ObjDetAPISample.png)
 
 This approach had several problems listed below:
+
 - The model was not accurate enough to be very confident in the detections.
 - The model was not fast enough to be used in real time.
 - The classes of objects where limited and if we wanted to add more classes, we had to use a different model.
@@ -20,7 +21,7 @@ To solve this problems, we decided to use a different approach. We decided to ma
 
 - [Dataset Generation](Dataset%20Generation/index.md)
 - Customly Trained Object Detection Models
-  - [Yolov5](Custom%20Models/yolov5.md)
-  - [NVIDIA TAO Toolkit](Custom%20Models/NVIDIA-Tao.md)
-  - [Tensorflow Object Detection API](Custom%20Models/TF%20Object%20Detection%20API.md)
-  - [Tensorflow Lite Model Maker](Custom%20Models/TFLite%20Model%20Maker.md)
+    - [Yolov5](Custom%20Models/yolov5.md)
+    - [NVIDIA TAO Toolkit](Custom%20Models/NVIDIA-Tao.md)
+    - [Tensorflow Object Detection API](Custom%20Models/TF%20Object%20Detection%20API.md)
+    - [Tensorflow Lite Model Maker](Custom%20Models/TFLite%20Model%20Maker.md)
