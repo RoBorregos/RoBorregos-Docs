@@ -43,34 +43,22 @@ void Motors::moveToAngle(int degree, int speed, int error) {
   }
 
   //Set speed to each motor
-  analogWrite(motor1.getMotorSpeed(), abSpeedA);
-  analogWrite(motor2.getMotorSpeed(), abSpeedB);
-  analogWrite(motor3.getMotorSpeed(), abSpeedC);
+  analogWrite(motor1.getPwmPin(), abSpeedA);
+  analogWrite(motor2.getPwmPin(), abSpeedB);
+  analogWrite(motor3.getPwmPin(), abSpeedC);
 
   //Move motors depending on the direction needed
-  if (speedA >= 0) 
-    motor1.motorForward();
-  else 
-    motor1.motorBackward();
+  (speedA >= 0) ? motor1.motorForward() : motor1.motorBackward();
 
-  if (speedB >= 0) 
-    motor2.motorForward();
-  else 
-    motor2.motorBackward();
+  (speedB >= 0) ? motor2.motorForward() : motor2.motorBackward();
   
-
-  if (speedC >= 0) 
-    motor3.motorForward();
-  else 
-    motor3.motorBackward();
+  (speedC >= 0) ? motor3.motorForward() : motor3.motorBackward();
   
 }
 ```
 
 
 ## Attacking robot
-Para optimizar los movimientos del delantero, la velocidad del robot varía dependiendo de la distancia a la pelota. Si está muy lejos, debe ser lo más alta posible y mientras se aproxima, debe reducirse para mantener mejor control. Por lo tanto, se reguló la velocidad con base en la siguiente función
-
 In order to take advantage of the HP motors, ideally, the robot should go as fast as possible, however, after a lot of testing, we found that the robot was not able to fully control the ball at high speeds, as it would usually push the ball out of bounds instead of getting it with the dribbler. Therefore, the speed was regulated depending on the distance to the ball (measured with the IR ring) using the following function:
 
 
