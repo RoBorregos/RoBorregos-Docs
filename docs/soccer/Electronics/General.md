@@ -2,11 +2,9 @@
 
 ## Design Software
 For the PCB Design the EasyEda software was used.
+
 The robot electronics are made up of 5 custom PCBs designed specifically for a specific use. The design of the PCBs was   carried out in the EasyEda software.
 
-Initially, the design of the main PCB began. which has measurements of 10 x 10 cm.
-
-For the main processing of our robot, an Arduino Mega Pro of 32 Bits and 2 Clocks of 16 MHz was used. It was mainly chosen for its light weight and its size reduction.
 
 
 ## Drivers 

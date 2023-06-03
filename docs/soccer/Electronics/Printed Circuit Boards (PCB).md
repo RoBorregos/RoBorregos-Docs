@@ -8,7 +8,6 @@ The Ir ring is made up of 12 IR receivers, and an Atmega328p was used for proces
 
 
 
-
 ## Line Detection Boards
 For the detection of the lines, independent PCBs were also designed for each of the three sides in the circumference of the robot.
 
@@ -22,3 +21,9 @@ One setback with the choice of phototransistors was the color and incidence of l
 
 ## Main Board
 
+The main board consists basically of an Arduino Mega Pro Shield for controlling the dedicated actuators and sensors for the robot to operate correctly.
+
+
+Initially, the design of the main PCB began. which has measurements of 10 x 10 cm.
+
+For the main processing of our robot, an Arduino Mega Pro of 32 Bits and 2 Clocks of 16 MHz was used. It was mainly chosen for its light weight and its size reduction.
