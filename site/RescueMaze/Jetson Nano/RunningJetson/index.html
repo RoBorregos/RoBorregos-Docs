@@ -9,17 +9,21 @@
       
       
       
+        <link rel="prev" href="../../">
       
-      <link rel="icon" href="/assets/favicon.png">
+      
+        <link rel="next" href="../USBRules/">
+      
+      <link rel="icon" href="../../../assets/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
       
-        <title>RoBorregos Docs</title>
+        <title>Running Project on Jetson nano - RoBorregos Docs</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.26e3688c.min.css">
       
       
 
@@ -35,7 +39,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -56,6 +60,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#running-project-on-jetson-nano" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -68,9 +77,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="RoBorregos Docs" class="md-header__button md-logo" aria-label="RoBorregos Docs" data-md-component="logo">
+    <a href="../../.." title="RoBorregos Docs" class="md-header__button md-logo" aria-label="RoBorregos Docs" data-md-component="logo">
       
-  <img src="/assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -86,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Running Project on Jetson nano
             
           </span>
         </div>
@@ -153,9 +162,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="RoBorregos Docs" class="md-nav__button md-logo" aria-label="RoBorregos Docs" data-md-component="logo">
+    <a href="../../.." title="RoBorregos Docs" class="md-nav__button md-logo" aria-label="RoBorregos Docs" data-md-component="logo">
       
-  <img src="/assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     RoBorregos Docs
@@ -171,7 +180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Welcome to RoBorregos Documentation
       </a>
     </li>
@@ -184,14 +193,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
       
       
       
@@ -200,7 +211,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           RescueMaze
@@ -213,7 +224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/RescueMaze/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         @RescueMaze
       </a>
     </li>
@@ -225,14 +236,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
       
       
       
@@ -241,7 +254,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2_2">
           <span class="md-nav__icon md-icon"></span>
           Jetson Nano
@@ -252,11 +265,73 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/RescueMaze/Jetson%20Nano/RunningJetson/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Running Project on Jetson nano
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Running Project on Jetson nano
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#launching-files" class="md-nav__link">
+    Launching files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-to-jetson-using-ssh" class="md-nav__link">
+    Connecting to Jetson using SSH
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debug-using-teleop" class="md-nav__link">
+    Debug using teleop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-new-files-to-jetson" class="md-nav__link">
+    Add new files to jetson
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -268,7 +343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/RescueMaze/Jetson%20Nano/USBRules/" class="md-nav__link">
+      <a href="../USBRules/" class="md-nav__link">
         USB Port automatization
       </a>
     </li>
@@ -324,7 +399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/home/" class="md-nav__link">
+      <a href="../../../home/" class="md-nav__link">
         @Home
       </a>
     </li>
@@ -365,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/home/vision/" class="md-nav__link">
+      <a href="../../../home/vision/" class="md-nav__link">
         Computer Vision
       </a>
     </li>
@@ -379,7 +454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/home/vision/pose_estimation/" class="md-nav__link">
+      <a href="../../../home/vision/pose_estimation/" class="md-nav__link">
         Pose Estimation with MediaPipe
       </a>
     </li>
@@ -435,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/soccer/" class="md-nav__link">
+      <a href="../../../soccer/" class="md-nav__link">
         @SoccerLightweight
       </a>
     </li>
@@ -476,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/soccer/Electronics/Dribbler%20Implementation/" class="md-nav__link">
+      <a href="../../../soccer/Electronics/Dribbler%20Implementation/" class="md-nav__link">
         Dribbler implementation
       </a>
     </li>
@@ -490,7 +565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/soccer/Electronics/General/" class="md-nav__link">
+      <a href="../../../soccer/Electronics/General/" class="md-nav__link">
         General
       </a>
     </li>
@@ -504,7 +579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/soccer/Electronics/Power%20Supply/" class="md-nav__link">
+      <a href="../../../soccer/Electronics/Power%20Supply/" class="md-nav__link">
         Power Supply
       </a>
     </li>
@@ -518,7 +593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/soccer/Electronics/Printed%20Circuit%20Boards%20%28PCB%29/" class="md-nav__link">
+      <a href="../../../soccer/Electronics/Printed%20Circuit%20Boards%20%28PCB%29/" class="md-nav__link">
         PCB Designs
       </a>
     </li>
@@ -593,7 +668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/soccer/Mechanics/More_Characteristics/1.Materials/" class="md-nav__link">
+      <a href="../../../soccer/Mechanics/More_Characteristics/1.Materials/" class="md-nav__link">
         Materials
       </a>
     </li>
@@ -607,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/soccer/Mechanics/More_Characteristics/2.Tools/" class="md-nav__link">
+      <a href="../../../soccer/Mechanics/More_Characteristics/2.Tools/" class="md-nav__link">
         Tools
       </a>
     </li>
@@ -655,7 +730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/soccer/Mechanics/Robot_Lower_Design/1.Base/" class="md-nav__link">
+      <a href="../../../soccer/Mechanics/Robot_Lower_Design/1.Base/" class="md-nav__link">
         Base
       </a>
     </li>
@@ -669,7 +744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/soccer/Mechanics/Robot_Lower_Design/2.Motors/" class="md-nav__link">
+      <a href="../../../soccer/Mechanics/Robot_Lower_Design/2.Motors/" class="md-nav__link">
         Motors
       </a>
     </li>
@@ -683,7 +758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/soccer/Mechanics/Robot_Lower_Design/3.Wheels/" class="md-nav__link">
+      <a href="../../../soccer/Mechanics/Robot_Lower_Design/3.Wheels/" class="md-nav__link">
         Wheels
       </a>
     </li>
@@ -697,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/soccer/Mechanics/Robot_Lower_Design/4.Dribbler/" class="md-nav__link">
+      <a href="../../../soccer/Mechanics/Robot_Lower_Design/4.Dribbler/" class="md-nav__link">
         Dribbler
       </a>
     </li>
@@ -711,7 +786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/soccer/Mechanics/Robot_Lower_Design/5.Kicker/" class="md-nav__link">
+      <a href="../../../soccer/Mechanics/Robot_Lower_Design/5.Kicker/" class="md-nav__link">
         Kicker
       </a>
     </li>
@@ -759,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/soccer/Mechanics/Robot_Upper_Design/1.IR_Ring_Cover/" class="md-nav__link">
+      <a href="../../../soccer/Mechanics/Robot_Upper_Design/1.IR_Ring_Cover/" class="md-nav__link">
         1.IR Ring Cover
       </a>
     </li>
@@ -773,7 +848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/soccer/Mechanics/Robot_Upper_Design/2.Adjustable_Camera/" class="md-nav__link">
+      <a href="../../../soccer/Mechanics/Robot_Upper_Design/2.Adjustable_Camera/" class="md-nav__link">
         2.Adjustable Camera
       </a>
     </li>
@@ -787,7 +862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/soccer/Mechanics/Robot_Upper_Design/3.Mirror/" class="md-nav__link">
+      <a href="../../../soccer/Mechanics/Robot_Upper_Design/3.Mirror/" class="md-nav__link">
         3.Mirror
       </a>
     </li>
@@ -842,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/soccer/Programming/General/" class="md-nav__link">
+      <a href="../../../soccer/Programming/General/" class="md-nav__link">
         General
       </a>
     </li>
@@ -856,7 +931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/soccer/Programming/IR_Detection/" class="md-nav__link">
+      <a href="../../../soccer/Programming/IR_Detection/" class="md-nav__link">
         IR Detection
       </a>
     </li>
@@ -870,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/soccer/Programming/Movement/" class="md-nav__link">
+      <a href="../../../soccer/Programming/Movement/" class="md-nav__link">
         Movement
       </a>
     </li>
@@ -884,7 +959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/soccer/Programming/Vision/" class="md-nav__link">
+      <a href="../../../soccer/Programming/Vision/" class="md-nav__link">
         Vision
       </a>
     </li>
@@ -940,7 +1015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/util/markdown/" class="md-nav__link">
+      <a href="../../../util/markdown/" class="md-nav__link">
         Getting Started with Markdown
       </a>
     </li>
@@ -971,6 +1046,44 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#launching-files" class="md-nav__link">
+    Launching files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-to-jetson-using-ssh" class="md-nav__link">
+    Connecting to Jetson using SSH
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debug-using-teleop" class="md-nav__link">
+    Debug using teleop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-new-files-to-jetson" class="md-nav__link">
+    Add new files to jetson
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -982,8 +1095,66 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+<h1 id="running-project-on-jetson-nano">Running Project on Jetson nano</h1>
+<h2 id="launching-files">Launching files</h2>
+<ul>
+<li>Initialize sensors, hector slam, move base, and services:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>roslaunch<span class="w"> </span>nav_main<span class="w"> </span>launch_jetson.launch
+</code></pre></div>
+<ul>
+<li>Run navigation algorithm:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>roslaunch<span class="w"> </span>exploration<span class="w"> </span>main
+</code></pre></div>
+<ul>
+<li>Use rviz from external computer:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ROS_IP</span><span class="o">=</span>YOUR_IP
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ROS_MASTER_URI</span><span class="o">=</span>JETSON_IP
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>rosrun<span class="w"> </span>rviz<span class="w"> </span>rviz<span class="w"> </span>-d<span class="w"> </span><span class="k">$(</span>rospack<span class="w"> </span>find<span class="w"> </span>robot_description<span class="k">)</span>/rviz/urdf.rviz
+</code></pre></div>
+<h2 id="connecting-to-jetson-using-ssh">Connecting to Jetson using SSH</h2>
+<ul>
+<li>Obtain jetson's IP</li>
+<li>Perform SSH</li>
+<li>Introduce password</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>nmap<span class="w"> </span>-sn<span class="w"> </span>YOUR_IP/24
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>ssh<span class="w"> </span>username_jetson@JETSON_IP
+</code></pre></div>
+<h2 id="debug-using-teleop">Debug using teleop</h2>
+<ul>
+<li>Make sure ROS_IP and ROS_MASTER_URI are properly set if using another laptop.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>rosrun<span class="w"> </span>teleop_twist_keyboard<span class="w"> </span>teleop_twist_keyboard.py<span class="w"> </span>_speed:<span class="o">=</span><span class="m">0</span>.8<span class="w"> </span>_turn:<span class="o">=</span><span class="m">2</span>.4<span class="w"> </span>_repeat_rate:<span class="o">=</span><span class="m">10</span>
+</code></pre></div>
+<h2 id="add-new-files-to-jetson">Add new files to jetson</h2>
+<p>If new code was implemented outside of the jetson, the file(s) can be copied using the following command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># use -r (recursive flag) for folders</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>scp<span class="w"> </span>-r<span class="w"> </span>SOURCE/<span class="w"> </span>DESTINATION/
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># e.g pass files from laptop to jetson (run command on laptop terminal with ssh connected to jetson)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>scp<span class="w"> </span>-r<span class="w"> </span>/home/oscar/maze_ws/src/devices/<span class="w"> </span>jetson@IP:/home/jetson/maze_ws/src/
+</code></pre></div>
+<p>Also, you may want to consider deleting the files from the jetson first before using scp with the new files:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># e.g. deleting devices folder before scp</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># in jetson</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>rm<span class="w"> </span>-rf<span class="w"> </span>/home/jetson/maze_ws/src/devices
+</code></pre></div>
+<p>Finally, use catkin_make to apply changes.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">cd</span><span class="w"> </span>~/maze_ws
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>catkin_make
+</code></pre></div>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1015,12 +1186,12 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["content.code.annotate"], "search": "/assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
-        <script src="/javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
