@@ -53,8 +53,12 @@ The velocity commands were initially published to the `/cmd_vel` topic, which is
 
 The goals are sent to the navigation stack using the [move_base](http://wiki.ros.org/move_base) package. In this case the goals were limited to the goals sent by the [algorithm](../Algorithm.md), being only 90 degree turns and 30 cm movements forward or backward. In order to send accurate goals, a custom transform was used, which is used to represent the ideal position of the robot at any given moment, compensating for incaccuracies in the robot's translational and rotational movement. 
 
-This transform was calculated by using the IMU yaw data as well as the [localization_grid](/docs/RescueMaze/ROS/LocalizationGrid.md) data.
+This transform was calculated by using the IMU yaw data as well as the [localization_grid](/docs/RescueMaze/ROS/LocalizationGrid.md) data and was published by a transform broadcaster.
 
 - IMU data: Stored when the robot is initialized, and used to calculate the angle of each cardinal direction, which are then used to update the transform.
 - Localization grid: Used to get the distance from the robot to the center of the current tile. Used to update the transform to send goals from the center of the tile.
 
+
+## Problems
+
+Multiple problems were encountered during the development of the navigation system. The main problem was the noise in the LiDAR readings, which caused the robot to generate wrong maps, making it impossible to navigate. This led to trying different LiDARs, as well as implementing filters for the LiDAR readings. The filters used included a custom script that reduced the laser scan readings by a given factor, allowing a faster processing and a consistent number of points per scan, as well as the [laser_filters](http://wiki.ros.org/laser_filters) package, which was used to filter the laser scan readings that were too close to the robot, as well as the readings that were too far from the robot.

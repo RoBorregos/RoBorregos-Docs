@@ -11,3 +11,4 @@ See the [rules](https://junior.robocup.org/wp-content/uploads/2023/01/RCJRescueM
 - [Jetson Nano](Jetson Nano/RunningJetson/)
 - [Algorithm](Algorithm)
 - [ROS](ROS)
+- [Control](Control/)
