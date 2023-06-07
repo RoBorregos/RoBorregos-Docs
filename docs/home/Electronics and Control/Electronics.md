@@ -33,6 +33,13 @@ No PCB is ordered without previous testing because of unexpected behaviors that 
 Building the desired circuit and testing it it's the only way to know with precision if it's going to work in a PCB, and also, which issues may have under certain conditions. However, this rule may not apply to the implementation of MCUs (microcontrollers) in SMD packages due to physical limitations or other specific components which might not be able to be tested in conventional ways.  
 </div>
 
+- Ask someone else to evaluate your design or to check for improvements
+
+<div align="justify">
+It is important to get every PCB evaluated by at least another person which understands its purpose and functionality. Ideally, in @home every electronic must know their PCBs and the principles to determine their quality, so always take in consideration that there's room for improvement and the ideas that might come from discussion will be beneficial for the robot's development.
+
+</div>
+
 ## Considerations
 
 <div align="justify">
