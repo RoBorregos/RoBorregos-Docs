@@ -65,4 +65,8 @@ For the connectors standars we have:
 
 The cable selection was made giving the next parameters:
 
+</div>
+</div>
+## Resources
 
+- [Boards](Boards.md)
