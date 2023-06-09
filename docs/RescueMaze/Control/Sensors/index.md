@@ -23,4 +23,4 @@ connected to different multiplexor channels.
 In order to abstract the use of sensors, a class Sensors.h was created. This class is in charge of initializing
 the majority of the sensors and providing a clean interface to use them. Instead of accessing the sensor data
 directly, it is best to do so through the sensor class. That way, filters could be applied more easily and if the
-type of sensor changes, the only thing that needs to be changed is the sensor class.
+type of sensor changes, the only thing that needs to be changed is the underlying implementation.

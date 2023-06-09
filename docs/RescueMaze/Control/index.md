@@ -25,5 +25,5 @@ The PID control regulated the PWM signal sent to the motors such that they appro
 In addition, the RPM targets were increased or diminished depending on the error between the current angle
 and angle of the desired orientation.
 
-See [PID](PID) for information about the PID implementation.
+See [PID](PID.md) for information about the PID implementation.
 
