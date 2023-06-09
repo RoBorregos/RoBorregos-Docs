@@ -5,6 +5,8 @@ First of all we need to explain the communication between the main computer and 
 
 ![image info](../../../assets/home/HomeElectronicsControl/Communication.png)
 
+The serial communication is done thru (pyserial)[https://pypi.org/project/pyserial/]. Thelogic of controll is that the microcontroller is running constantly a PID control system
+
 
 
 
