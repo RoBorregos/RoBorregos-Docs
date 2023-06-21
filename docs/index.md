@@ -16,10 +16,8 @@ RoBorregos is the Tecnológico de Monterrey's International Robotics Representat
 - [ROS](https://www.ros.org/)
 
 
-## Development team
+### Development team
 
 | Name                    | Email                                                               | Github                                                       | Role      |
 | ----------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------ | --------- |
-| Iván Romero | [i.wells.ar@gmail.com](mailto:i.wells.ar@gmail.com) | [@IvanRomero03](https://github.com/IvanRomero03) | Software Developer, Repo Mantainer and Automatization |
-| Vic | [@gmail.com](mailto:@gmail.com) | [@](https://github.com/) | Software Developer, Repo Mantainer and Automatization | /* @victoriagdlf */
-| Kevin | [@gmail.com](mailto:@gmail.com) | [@](https://github.com/) | PM | /* @KevinVegaTec */
+| Iván Romero | [i.wells.ar@gmail.com](mailto:i.wells.ar@gmail.com) | [@IvanRomero03](https://github.com/IvanRomero03) | Repo Mantainer and Documentation Lead |

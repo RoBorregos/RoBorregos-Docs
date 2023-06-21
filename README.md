@@ -7,9 +7,7 @@ Welcome to the RoBorregos Official documentation. This documentation is based on
 
 | Name                    | Email                                                               | Github                                                       | Role      |
 | ----------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------ | --------- |
-| Iván Romero | [i.wells.ar@gmail.com](mailto:i.wells.ar@gmail.com) | [@IvanRomero03](https://github.com/IvanRomero03) | Software Developer, Repo Mantainer and Automatization |
-| Vic | [@gmail.com](mailto:@gmail.com) | [@](https://github.com/) | Software Developer, Repo Mantainer and Automatization | /* @victoriagdlf */
-| Kevin | [@gmail.com](mailto:@gmail.com) | [@](https://github.com/) | PM | /* @KevinVegaTec */
+| Iván Romero | [i.wells.ar@gmail.com](mailto:i.wells.ar@gmail.com) | [@IvanRomero03](https://github.com/IvanRomero03) | Repo Mantainer and Documentation Lead |
 
 
 ## Add new page
@@ -56,7 +54,7 @@ mkdocs serve
 4. Open the browser and go to http://localhost:8000
 
 ## Deploy
-
+Pls do not deploy without permission from the repo mantainer.
 ```{bash}	
 mkdocs gh-deploy
 ```
