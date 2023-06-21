@@ -8,7 +8,10 @@ RoBorregos is the Tecnológico de Monterrey's International Robotics Representat
 
 ## Sections
 
-- [Projects](projects.md)
+- [@Home](home/index.md)
+- [LARC](LARC/index.md)
+- [RescueMaze](RescueMaze/index.md)
+- [Soccer](soccer/index.md)
 - [Util](util/markdown.md)
 
 ## Tools
