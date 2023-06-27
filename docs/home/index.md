@@ -8,7 +8,7 @@ The RoboCup@Home league is a part of the RoboCup initiative and is the largest a
 The focus areas include: 
 
 - [Human-Robot Interaction](Human Robot Interaction/index.md)
-- [Navigation and Mapping]()
+- [Navigation and Mapping](Navigation/index.md)
 - [Computer Vision]()
 - [Object Manipulation]()
 - [System Integration]()
