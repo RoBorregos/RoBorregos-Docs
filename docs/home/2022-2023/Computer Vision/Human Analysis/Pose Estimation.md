@@ -90,7 +90,7 @@ As a result, you'll not only be able to get the pose estimation array. but also 
 
 Example:
 
-![Pose estimation with webcam](../../assets/mpPose.jpg)
+![Pose estimation with webcam](../../../../assets/mpPose.jpg)
 
 ### Using pose estimation with ROS
 
@@ -164,5 +164,5 @@ with mp_pose.Pose(
 
 Here is an example of the result:
 
-![Pose estimation with ROS](../../assets/poseDetectionEx.jpeg)
+![Pose estimation with ROS](../../../../assets/poseDetectionEx.jpeg)
 

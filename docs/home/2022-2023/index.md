@@ -29,7 +29,7 @@ Integrated the on-robot computers, Xarm and base within a wired network, as well
 Developed a pose estimation ROS node, mainly used for detecting simple actions.
 
 ### Object Detection
-Switched to YOLOv5 for object detection and developed a method for fast and [semi authomatic dataset generation](Object%20Detection/Dataset%20Automatization.md).
+Switched to YOLOv5 for object detection and developed a method for fast and [semi authomatic dataset generation](Computer%20Vision/Object%20Detection/Dataset%20Automatization.md).
 
 ### Human Analysis
 Used DeepFace for face recognition and analysis as well as object detection models for clothing description.

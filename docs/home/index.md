@@ -7,11 +7,11 @@ Welcome to the @Home competition documentation of [RoBorregos](https://roborrego
 The RoboCup@Home league is a part of the RoboCup initiative and is the largest annual competition for autonomous service robots. Its goal is to develop service and assistive robot technology for future domestic applications. The competition evaluates robots abilities in a realistic home environment through benchmark tests. 
 The focus areas include: 
 
-- [Human-Robot Interaction](Human Robot Interaction/index.md)
-- [Navigation and Mapping]()
-- [Computer Vision]()
-- [Object Manipulation]()
-- [System Integration]()
+- Human-Robot Interaction
+- Navigation and Mapping
+- Computer Vision
+- Object Manipulation
+- System Integration
 
 The RoboCup@Home competition is divided into three categories: the [Domestic Standard Platform League](https://www.robocup.org/leagues/34) (DSPL), the [Social Standard Platform League](https://www.robocup.org/leagues/15) (SSPL), and the [Open Platform League](https://www.robocup.org/leagues/14) (OPL). Our team competes in the Open Platform League.
 

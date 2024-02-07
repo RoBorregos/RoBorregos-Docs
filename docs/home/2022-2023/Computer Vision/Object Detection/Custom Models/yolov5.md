@@ -87,7 +87,7 @@ yolov5l.pt LARGE
 yolov5x.pt EXTRA LARGE
 ```
 With the following precision and speed each:
-![YOLOv5 weights precision](../../../../assets/home/ObjectDetection/Yolov5-models-performance.png)
+![YOLOv5 weights precision](../../../../../assets/home/ObjectDetection/Yolov5-models-performance.png)
 With testing, yolov5m has proven of enough accuracy while occupying less than 2GB of VRAM allocated on runtime.
 
 After training has finished, it will create a new folder on runs/train. There the created models will be contained on the weights folder, including the one generated on the last epoch of the training and the one with the best average precision. The folder will also include the results statistics in a graphical and as a CSV file.
@@ -96,7 +96,7 @@ To validate and test the model, it is recommended to use the tutorial.ipynb note
 
 Sample results:
 
-![Sample YOLOv5 Model](../../../../assets/home/ObjectDetection/Yolov5DetectionSample.png)
+![Sample YOLOv5 Model](../../../../../assets/home/ObjectDetection/Yolov5DetectionSample.png)
 
 Detection was made using the YOLO ROS Wrapper available at:
 ```

@@ -26,17 +26,17 @@ With the scripts provided in the dataset, the object is cut to be used for the c
 
 - First the image is detected using available YOLOv5 models (which remains one of the most important improvements to be made, as some objects could prove difficult to find an adequate model to be detected). Then the object is segmented and cut using the Segment-anything model from META. 
 
-![Original Image](../../../assets/home/DatasetAutomatization/Coke_original.jpg)
+![Original Image](../../../../assets/home/DatasetAutomatization/Coke_original.jpg)
 
 After cut:
 
-![Segmented Image](../../../assets/home/DatasetAutomatization/Coke_segmented.png)
+![Segmented Image](../../../../assets/home/DatasetAutomatization/Coke_segmented.png)
 
 With this photo, the object remains at its original position in the image (which can also be used as labels for training with real images).
 
 - Then, the image is cut to the object size, which will be the one used in the creation of datasets.
 
-![Segmented Image](../../../assets/home/DatasetAutomatization/Coke_cut.png)
+![Segmented Image](../../../../assets/home/DatasetAutomatization/Coke_cut.png)
 
 ## Dataset creation
 
@@ -45,15 +45,15 @@ Using a dataset of various backgrounds (including the area of the competition an
 It then exports it in a format readable for the training models, currently with a version exporting annotations as a COCO json format and in the YOLOv5 one. The notebook exports the COCO format with segmentation, so it can be used with models that support training with segmentation labels.
 
 Example of an image produced:
-![Example Image](../../../assets/home/DatasetAutomatization/datasetImageEx.jpg)
+![Example Image](../../../../assets/home/DatasetAutomatization/datasetImageEx.jpg)
 
 Segmentation visualized:
-![Example Image Segmented](../../../assets/home/DatasetAutomatization/datasetImageEx_Segmented.png)
+![Example Image Segmented](../../../../assets/home/DatasetAutomatization/datasetImageEx_Segmented.png)
 
 ## Results Obtained
 While images from the datasets created may sometimes look curious and the objects shown on positions and places they would never be found, this process was shown to be succesful to a great extent. An example of this was how one of the first models was trained, on which only backgrounds from the table the model was going to be detecting on were used. The results of this model, while accurate on that space, struggled on other areas:
 
-![Noise Test](../../../assets/home/DatasetAutomatization/NoiseTest.jpg)
+![Noise Test](../../../../assets/home/DatasetAutomatization/NoiseTest.jpg)
 
 After retraining with a dataset using diverse backgrounds (both taken from the work area and others), this problem was mostly solved:
-![Noise Test after Correction](../../../assets/home/DatasetAutomatization/NoiseTestCorrected.jpg)
+![Noise Test after Correction](../../../../assets/home/DatasetAutomatization/NoiseTestCorrected.jpg)
