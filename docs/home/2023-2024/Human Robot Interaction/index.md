@@ -1,0 +1,10 @@
+# Human Robot Interaction
+### Speech Recognition
+- Developed a ROS node for speech recognition using Whisper, replacing our online solution from Azure.
+
+### Action Interpretation
+- Developed custom fine tuned GPT-3.5 model for action interpretation, with emphasis on a more flexible and human-like interpretation of voice commands.
+
+### Robot Interface
+- Developed a ROS Node for continuous arm movement to follow the user, enhancing the robot's interaction capabilities.
+- Installed and started development on an on-robot tablet for user interaction, including RVIZ and camera visualization and a custom interface for the robot's services.
