@@ -2,11 +2,17 @@
 HRI aims to create intuitive and natural ways for humans to interact with robots, allowing for seamless integration of robots into various domains such as healthcare, manufacturing, entertainment, and personal assistance.
 
 In Roborregos, our work in this field has been divided into three different goals:
-### Speech Recognition
-- Developed a ROS node for speech recognition using Whisper, replacing our online solution from Azure.
 
-### Action Interpretation
-- Developed custom fine tuned GPT-3.5 model for action interpretation, with emphasis on a more flexible and human-like interpretation of voice commands.
+### Human physical analysis
+-	Replaced DeepFace for face_recognition from DLib, allowing for faster and more accurate face recognition.
+-	Developed a custom human attribute recognition using the PETA dataset.
+
+### Speech
+It is divided into 2 subsections:
+  1.	Speech Recognition
+    -	Developed a ROS node for speech recognition using Whisper, replacing our online solution from Azure.
+  2.	Action Interpretation (NLP, natural language processing)
+    -	Developed custom fine tuned GPT-3.5 model for action interpretation, with emphasis on a more flexible and human-like interpretation of voice commands. 
 
 ### Robot Interface
 - Developed a ROS Node for continuous arm movement to follow the user, enhancing the robot's interaction capabilities.
