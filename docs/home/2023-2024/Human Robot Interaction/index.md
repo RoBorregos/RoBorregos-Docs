@@ -1,4 +1,7 @@
 # Human Robot Interaction
+HRI aims to create intuitive and natural ways for humans to interact with robots, allowing for seamless integration of robots into various domains such as healthcare, manufacturing, entertainment, and personal assistance.
+
+In Roborregos, our work in this field has been divided into three different goals:
 ### Speech Recognition
 - Developed a ROS node for speech recognition using Whisper, replacing our online solution from Azure.
 
