@@ -9,10 +9,12 @@ In Roborregos, our work in this field has been divided into three different goal
 
 ### Speech
 It is divided into 2 subsections:
-  1.	Speech Recognition
-    -	Developed a ROS node for speech recognition using Whisper, replacing our online solution from Azure.
-  2.	Action Interpretation (NLP, natural language processing)
-    -	Developed custom fine tuned GPT-3.5 model for action interpretation, with emphasis on a more flexible and human-like interpretation of voice commands. 
+
+  **1.	Speech Recognition**
+- Developed a ROS node for speech recognition using Whisper, replacing our online solution from Azure.
+  
+**2. Action Interpretation (NLP, natural language processing)**
+- Developed custom fine tuned GPT-3.5 model for action interpretation, with emphasis on a more flexible and human-like interpretation of voice commands. 
 
 ### Robot Interface
 - Developed a ROS Node for continuous arm movement to follow the user, enhancing the robot's interaction capabilities.
