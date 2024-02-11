@@ -3,7 +3,7 @@
 In order to allow interaction with the robot and receive visual feedback, a diplay was integrated to the robot.
 
 <p align="center">
-<img src= "../../../../../assets/home/HRI/Display.png" alt= "Defending detection" width="80%" height="80%">
+<img src= "../../../../../assets/home/HRI/Display.png" alt= "Display" width="80%" height="80%">
 </p>
 
 ## Interface
