@@ -3,19 +3,19 @@ HRI aims to create intuitive and natural ways for humans to interact with robots
 
 In Roborregos, our work in this field has been divided into three different goals:
 
-### [Human physical analysis](/docs/home/Aug%202023%20>%20Present/Human%20Robot%20Interaction/Human%20Physical%20Analysis/Face%20Following.md)
+### [Human physical analysis](Human%20Physical%20Analysis/Face%20Following)
 -	Replaced DeepFace for face_recognition from DLib, allowing for faster and more accurate face recognition.
 -	Developed a custom human attribute recognition using the PETA dataset.
 
-### [Speech](/docs/home/Aug%202023%20>%20Present/Human%20Robot%20Interaction/Speech/Action%20Interpretation.md)
+### [Speech](Speech/Action%20Interpretation)
 It is divided into 2 subsections:
 
-  **1.	Speech Recognition**
+  **1.	[Speech Recognition](Speech/Human%20Speech%20Processing)**
 - Developed a ROS node for speech recognition using Whisper, replacing our online solution from Azure.
   
-**2. Action Interpretation (NLP, natural language processing)**
+**2. [Action Interpretation (NLP, natural language processing)](Speech/Action%20Interpretation)**
 - Developed custom fine tuned GPT-3.5 model for action interpretation, with emphasis on a more flexible and human-like interpretation of voice commands. 
 
-### [Robot Interface](/docs/home/Aug%202023%20>%20Present/Human%20Robot%20Interaction/Robot%20Interface/Display.md)
+### [Robot Interface](Robot%20Interface/Display)
 - Developed a ROS Node for continuous arm movement to follow the user, enhancing the robot's interaction capabilities.
 - Installed and started development on an on-robot tablet for user interaction, including RVIZ and camera visualization and a custom interface for the robot's services.
