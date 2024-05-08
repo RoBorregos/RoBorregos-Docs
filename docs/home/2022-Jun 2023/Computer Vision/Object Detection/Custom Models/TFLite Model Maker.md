@@ -75,4 +75,4 @@ model.export(export_dir='.', export_format=[ExportFormat.SAVED_MODEL, ExportForm
 
 Sample results:
 
-![Sample TF Lite Model](../../../../../assets/home/ObjectDetection/TFLite.png)
+![Sample TF Lite Model](/assets/home/ObjectDetection/TFLite.png)

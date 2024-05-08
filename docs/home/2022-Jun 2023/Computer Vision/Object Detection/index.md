@@ -2,13 +2,13 @@
 
 The Object Detection module represent the challenge of identify and locate objects in the environment. This module is used in computer vision and image processing to detect objects in an image or video sequence. The goal is to identify the object and its location within the image or video frame. The module uses various techniques such as feature extraction, object recognition, and machine learning algorithms to achieve this task.
 
-![Object Detection Example](../../../../assets/home/ObjectDetection/ObjectDetectionSample.jpg)
+![Object Detection Example](/assets/home/ObjectDetection/ObjectDetectionSample.jpg)
 
 ## Challenges and Tasks 
 
 The Object Detection module is focused on produce a highly accurate while fast object detection system. The first approach for this in the first year of participation, was to use a pre-trained model based on the Object Detection API from Tensorflow. This model was trained with the COCO dataset, which contains at most 4 different classes of objects. The process was to generate the dataset from a manually labeled dataset of images, and train the model with it. 
 
-![Object Detection API Model Sample](../../../../assets/home/ObjectDetection/ObjDetAPISample.png)
+![Object Detection API Model Sample](/assets/home/ObjectDetection/ObjDetAPISample.png)
 
 This approach had several problems listed below:
 
