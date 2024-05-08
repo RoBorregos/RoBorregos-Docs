@@ -19,3 +19,6 @@ It is divided into 2 subsections:
 ### [Robot Interface](Robot%20Interface/Display.md)
 - Developed a ROS Node for continuous arm movement to follow the user, enhancing the robot's interaction capabilities.
 - Installed and started development on an on-robot tablet for user interaction, including RVIZ and camera visualization and a custom interface for the robot's services.
+
+
+Hola
