@@ -6,10 +6,10 @@ To flash the Jetson AGX Xavier, you need to download the [JetPack SDK](https://d
 
 1. Download the JetPack SDK from Nvidia. You will need to create an account to download the SDK in [Nvidia Developer](https://developer.nvidia.com/drive/downloads).
 2. Put the jetson AGX Xavier on recovery mode. There is a recovery button on the board, which is in the middle of three buttons. Hold the recovery button and then power it up, which will enter the Force Recovery Mode
-3. You should connect the Jetson AGX Xavier to your computer with a USB to USB-C cable. The USB-C port is the one that is closer to the power button. It should detect the board![sdk Manager ](../../../assets/home/sdk0.png)
-4. You Can select the components you want to install. We recommend to install all of them.![sdk Manager ](../../../assets/home/sdk1.png)
-5. Then you should flash the board (if you are using SSD storage you should change the Storage Device).![sdk Manager ](../../../assets/home/sdk2.png)
-6. When you get to install additional components, you will get a promt, at that moment the board has already a initial OS, if you get an error in the connection change to another method and check with a display the real IP of the board.![sdk Manager ](../../../assets/home/sdk3.jpeg)
+3. You should connect the Jetson AGX Xavier to your computer with a USB to USB-C cable. The USB-C port is the one that is closer to the power button. It should detect the board![sdk Manager ](/assets/home/sdk0.png)
+4. You Can select the components you want to install. We recommend to install all of them.![sdk Manager ](/assets/home/sdk1.png)
+5. Then you should flash the board (if you are using SSD storage you should change the Storage Device).![sdk Manager ](/assets/home/sdk2.png)
+6. When you get to install additional components, you will get a promt, at that moment the board has already a initial OS, if you get an error in the connection change to another method and check with a display the real IP of the board.![sdk Manager ](/assets/home/sdk3.jpeg)
 
 ## Setting up the Jetson AGX Xavier
 

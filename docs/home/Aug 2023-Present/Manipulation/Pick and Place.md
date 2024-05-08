@@ -5,10 +5,10 @@ The process starts with vision information from 2D object detection nodes as wel
 ## Picking objects
 
 Once a requested object is detected from the live image, a `RANSAC` algorithm is used to to find the table the robot is looking at and cuts it off from the `pointcloud`, which leaves the object meshes available for identification. This process has proven to be highly consistent in obtaining clean meshes with an adequate speed, and has been the object 3D extraction solution since the AirLab Stacking Challenge. 
-![Extracted objects](../../../../../assets/home/Manipulation/table_extraction.png)
+![Extracted objects](/assets/home/Manipulation/table_extraction.png)
 
 A Grasping Pose Detector (GPD) model is then used to obtain possible gripper positions to pick the object matched with the 2D detection position, and MoveIt is used to plan the trajectory considering the robot itself and the environment (through a live octomap) to avoid collisions.
-![Pick debug](../../../../../assets/home/Manipulation/pick.png)
+![Pick debug](/assets/home/Manipulation/pick.png)
 
 ## Placing objects
 
@@ -24,6 +24,6 @@ As a placing near the center of the robot is preferred, a Breadth First Search a
 Then, MoveIt is used for the planning of the trajectory towards the Pose given. When the position is reached, it opens the gripper, placing the object.
 
 The second solution aims at solving scenarios with more complex table and object positions and angles relative to the robot, as it considers all points in the pointcloud as they are. First, the point cloud is filtered to only consider the area reachable by the Xarm6, and executes the RANSAC to obtain only the table point cloud, which is sent to a clustering server for processing. It also considers the objects observed in the filtered area and also sends the number of objects present in that area of the table. The server processes the point cloud received as a 2D scatter plot, over which it runs a k-means clustering algorithm, which resulting clusters are used to evaluate the area with the most available space. The number of clusters generated is proportional to the number of objects in the area observed. A factor for multiplication is added so that, for every object, N number of clusters is generated so that different clusters are generated around each object. Currently, 4 clusters per object are analyzed, following that for every object a cluster is generated in each cardinal direction. 
-![Place debug](../../../../../assets/home/Manipulation/place.png)
+![Place debug](/assets/home/Manipulation/place.png)
 
 After every cluster is generated, the one with the largest area is selected. The area is calculated through generation of a point density histogram for each cluster, which divides the plot on a size proportional grid and uses a minimum pixel density threshold to count for occupied and unoccupied areas of the histogram. The largest cluster obtained then has its centroid calculated and is sent as a 3D pose for object placing.
