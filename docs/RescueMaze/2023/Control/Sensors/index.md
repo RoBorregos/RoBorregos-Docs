@@ -2,9 +2,9 @@
 
 The following sensors were used in Rescue Maze 2023:
 
-- Time of flight distance sensor: [VLX53L0X](./VLX53L0X) (Adafruit)
-- RGB Color Sensor: [TCS34725](./TCS34725) (Adafruit)
-- Absolute Orientation Sensor: [BNO055](./BNO055) (Adafruit) 
+- Time of flight distance sensor: [VLX53L0X](./VLX53L0X.md) (Adafruit)
+- RGB Color Sensor: [TCS34725](./TCS34725.md) (Adafruit)
+- Absolute Orientation Sensor: [BNO055](./BNO055.md) (Adafruit) 
 
 ## Using i2c devices
 

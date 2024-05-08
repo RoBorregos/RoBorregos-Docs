@@ -7,37 +7,6 @@
 
 ## Competition
 
-See the [rules](https://robocupjuniortc.github.io/soccer-rules/master/rules.pdf) for Soccer Lightweight 2023.
+See the [rules](https://robocupjuniortc.github.io/soccer-rules/master/rules.pdf) for Soccer Lightweight.
 
-## Sections
-
-### Mechanics
-
-- [General](/soccer/Mechanics/0.General)
-
-- [Robot Lower Design](/soccer/Mechanics/1.Robot_Lower_Design)
-
-- [Robot Upper Design](/soccer/Mechanics/2.Robot_Upper_Design)
-
-### Electronics
-
-- [General](/soccer/Electronics/1 General)
-
-- [Power Supply](/soccer/Electronics/2 Power Supply)
-
-- [Printed Circuit Boards (PCB)](/soccer/Electronics/3 Printed Circuit Boards (PCB))
-
-- [Dribbler Implementation](/soccer/Electronics/4 Dribbler Implementation)
-
-### Programming
-
-- [General](/soccer/Programming/General)
-
-- [IR Detection](/soccer/Programming/IR_Detection)
-
-- [Line Detection](/soccer/Programming/Line_Detection)
-
-- [Movement](/soccer/Programming/Movement)
-
-- [Vision](/soccer/Programming/Vision)
 

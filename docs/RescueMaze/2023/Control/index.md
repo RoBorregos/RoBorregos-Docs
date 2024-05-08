@@ -9,7 +9,7 @@ One of the most important elements needed to develop a stable control is the use
 sensors which give feedback to the robot about its current state. The sensor input is then 
 used to move the robot accordingly and reach the target positions.
 
-See [Sensors](./Sensors) for information about the sensors used.
+See [Sensors](Sensors/index.md) for information about the sensors used.
 
 ## PID
 

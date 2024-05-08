@@ -53,7 +53,7 @@ The velocity commands were initially published to the `/cmd_vel` topic, which is
 
 The goals are sent to the navigation stack using the [move_base](http://wiki.ros.org/move_base) package. In this case the goals were limited to the goals sent by the [algorithm](../Algorithm.md), being only 90 degree turns and 30 cm movements forward or backward. In order to send accurate goals, a custom transform was used, which is used to represent the ideal position of the robot at any given moment, compensating for incaccuracies in the robot's translational and rotational movement. 
 
-This transform was calculated by using the IMU yaw data as well as the [localization_grid](/docs/RescueMaze/ROS/LocalizationGrid.md) data and was published by a transform broadcaster.
+This transform was calculated by using the IMU yaw data as well as the [localization_grid](LocalizationGrid.md) data and was published by a transform broadcaster.
 
 - IMU data: Stored when the robot is initialized, and used to calculate the angle of each cardinal direction, which are then used to update the transform.
 - Localization grid: Used to get the distance from the robot to the center of the current tile. Used to update the transform to send goals from the center of the tile.
