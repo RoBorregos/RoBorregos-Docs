@@ -6,7 +6,9 @@ The main developments during 2024 with respect to previous years are the followi
 TODO: modify this.
 ## Mechanics
 
-- [Jetson Nano](Jetson Nano/RunningJetson/)
+- [OverallCAD](Overrall CAD/)
+- [Wheels](Wheels/)
+- [Dispenser](Dispenser/)
 
 ## Electronics
 
