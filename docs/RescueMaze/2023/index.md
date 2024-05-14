@@ -7,15 +7,8 @@ TODO: modify this.
 
 ## Mechanics
 
-- [Jetson Nano](Jetson Nano/RunningJetson/)
-- d
-
 ## Electronics
-
-- [Jetson Nano](Jetson Nano/RunningJetson/)
--
 
 ## Programming
 
 - [Jetson Nano](Jetson Nano/RunningJetson/)
-- d
