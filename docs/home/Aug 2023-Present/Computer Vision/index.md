@@ -1,5 +1,5 @@
 # Computer Vision
-### Human Recognition
+### Human Analysis
 - Replaced DeepFace for face_recognition from dlib, allowing for faster and more accurate face recognition.
 - Developed a custom human attribute recognition using the PETA dataset.
   
