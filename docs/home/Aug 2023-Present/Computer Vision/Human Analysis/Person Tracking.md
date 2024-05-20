@@ -11,11 +11,9 @@ In order to detect people, the `YOLO V8` model was used, obtaining the bounding 
 results = self.model.track(frame, persist=True, tracker='bytetrack.yaml', classes=0, verbose=False)
 ```
 
-
-
 ## Person re-identification
 
-To re-identify people, the repository [Person_reID_baseline_pytorch]("https://github.com/layumi/Person_reID_baseline_pytorch") was used as a base to train different models using the `Market1501` dataset. More specifically, the models `ResNet50`, `Swin`, `PCB` and `DenseNet` were trained and tested, eventually opting for the `DenseNet` model as it was the lightest. With the model trained, it was possible to obtain a feature vector from an image with a person. 
+To re-identify people, the repository [Person_reID_baseline_pytorch]("https://github.com/layumi/Person_reID_baseline_pytorch") was used as a base to train different models using the `Market1501` dataset. More specifically, the models `ResNet50`, `Swin`, `PCB` and `DenseNet` were trained and tested, eventually opting for the `DenseNet` model as it was the lightest. With the model trained, it was possible to obtain a feature vector from an image with a person.
 
 ```python
 # Crop the image using the bbox coordinates
@@ -51,19 +49,19 @@ def compare_images(features1, features2, threshold=0.6):
 An issue encountered with the detection and re-identification process was that the YOLO model would sometimes identify parts of people as a person, meaning that bounding boxes would sometimes contain only hands or heads, for example. This became problematic as the re-identification model could return unexpected results for this cases. Therefore, the `MediaPipe` library was used to detect the chest of a person, and only then the re-identification model would be used.
 
 ```python
-pose_model = mp.solutions.pose.Pose(min_detection_confidence=0.8) 
+pose_model = mp.solutions.pose.Pose(min_detection_confidence=0.8)
 
 def check_visibility(poseModel, image):
-    pose = poseModel    
-    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)  
+    pose = poseModel
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
     # Process the image
-    results = pose.process(image)                   
+    results = pose.process(image)
 
     # Check if the pose landmarks are detected
-    if results.pose_landmarks is not None:          
+    if results.pose_landmarks is not None:
 
-        # Get the x and y coordinates of the chest 
+        # Get the x and y coordinates of the chest
         chest_x = results.pose_landmarks.landmark[11].x
         chest_y = results.pose_landmarks.landmark[11].y
         chest_visibility = results.pose_landmarks.landmark[11].visibility
@@ -79,7 +77,7 @@ def check_visibility(poseModel, image):
 
 In order to start tracking, the service should be called, recieving a boolean to start or end the process. Once the service is called to begin tracking, the person detected with the largest bounding box area is assigned as the tracked person. While the tracking process is still enabled, the node will publish the coordinates of the person relative to the image (in pixels) as long as the tracked person is in frame, else it will not publish anything.
 
- The ROS node is structured in the following way:
+The ROS node is structured in the following way:
 
 ### Subscriber topics
 
@@ -93,3 +91,11 @@ In order to start tracking, the service should be called, recieving a boolean to
 ### Service topics
 
 - `/vision/change_person_tracker_state`: Of type `SetBool` to enable or disable tracking.
+
+### Launch file
+
+For easier execution, the node can be launched using the following command:
+
+```bash
+roslaunch vision receptionist.launch
+```
