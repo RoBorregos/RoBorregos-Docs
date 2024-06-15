@@ -8,8 +8,8 @@ This control has as reference the speed calculated with the ticks or interruptio
 
 The encoder could be said to have an infrared that connects from side to side, so every time something passes through the middle of this "laser" there is an interruption. To get an approximation of how many ticks there are in a revolution you can make a code that counts the interrupts on the required pin with the arduino function attachInterrupt().
 
-Link of the attachInterrupt() function:
-https://www.arduino.cc/reference/en/language/functions/external-interrupts/attachinterrupt/
+attachInterrupt() function:
+[here](https://www.arduino.cc/reference/en/language/functions/external-interrupts/attachinterrupt/)
 
 
 In this way the speed of each motor is taken out so that the PID control allows to increase the pwm variable to reach the desired speed so that all motors go at the same speed.
@@ -23,4 +23,4 @@ To make the robot go in a specific orientation, the control was implemented with
 In certain scenarios as would be the case of the ramp there are always walls on its sides so it was devised to apply a control with respect to the distances of the sides that is to say that if it was told to keep 7cm distance with respect to the wall this oscillated to reach that point and leave the ramp, of course the counters had to be modified to reach the desired behavior as well as the desired distance.
 
 Impementation of PID:
-https://github.com/RoBorregos/RescueMaze2024/blob/nacionalNewMovement/PIDmotores/PID.cpp
+[here](https://github.com/RoBorregos/RescueMaze2024/blob/nacionalNewMovement/PIDmotores/PID.cpp)
