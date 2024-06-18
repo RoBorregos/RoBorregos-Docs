@@ -10,6 +10,3 @@
 - [🎮 Robot Control]()
 - [🤖 Algorithm Design]()
 - [📸 Robot Vision]()
-    - [⚽ Ball Detection]()
-    - [🥅 Goalpost Detection]()
-    - [🛤️ Line Detection]()
