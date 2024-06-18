@@ -78,9 +78,10 @@ The following code was used to find a rough estimate of what our vision would lo
 
 This is the graph showed by the code comparing meters of visibility and "x" axis distance on mirror hyperbola.
 
-![Mirror Graph](docs/assets/MirrorGraph.png)
 
-![Mirror Simulation](docs/assets/mirrorsim.png)
+![Mirror Graph](https://i.ibb.co/tqGJ1Fb/Screenshot-2024-06-18-101928.png)
+
+![Mirror Simulation](https://i.ibb.co/3rVKpsG/Screenshot-2024-06-18-102757.png)
 
 **Design simulation in blender**
 
