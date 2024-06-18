@@ -8,7 +8,7 @@ For robot control we decided to create our motor libraries following this catego
 
 Below is a UML diagram showing the relation between both classes and their interaction: 
 
-![UML Diagram for motor classes](https://i.ibb.co/ctWGs3G/Motors-UML.png)
+![UML Diagram for motor classes](\assets\soccer\Programming\MotorsUML.png)
 
 All of our kinematic logic is found in the Motors class, containing two relevant methods 
 
@@ -27,7 +27,7 @@ float m4 = cos(((315 + degree) * PI / 180));
 ```
 Which models the robot below: 
 
-![Robot wheel model](https://i.ibb.co/qyBbGWj/robot.png)
+![Robot wheel model](\assets\soccer\Programming\robot.png)
 
 For the case of using the IMU sensor, we implemented a omega PID controller to regulate the robot's angle while moving to an specific direction. We also implemented a traslational PID
 to regulate speed when approaching the ball. To simplify this we created a PID class to make our code reusable. 
@@ -36,7 +36,7 @@ to regulate speed when approaching the ball. To simplify this we created a PID c
 
 For IMU sensor we utilized the [Adafruit_BNO055](https://github.com/adafruit/Adafruit_BNO055/tree/master), we also implemented our own library for class creation. Utilizing the yaw position we were able to calculate setpoint and error for out PID controller, below is the logic followed to match angles on the robot frame and the real world. 
 
-![BNO robot diagram](https://i.ibb.co/yQ2VbgM/bnodiagram.png)
+![BNO robot diagram](\assets\soccer\Programming\bnodiagram.png)
 
 Note that yaw is calculated using the Euler vector as shown in the equation below:
 

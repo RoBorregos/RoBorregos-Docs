@@ -1,6 +1,6 @@
 Taking into account that we used a dual microcontroller we utilized various channels for serial communication. Our pipeline follows this structure:  
 
-![Serial Communication](https://i.ibb.co/2yD3PXs/serialdiagram.png)
+![Serial Communication](\assets\soccer\Programming\serialdiagram.png)
 
 Note that the first data package input occurrs in the camera, sending the following variables to the Raspberry Pi Pico: 
 
