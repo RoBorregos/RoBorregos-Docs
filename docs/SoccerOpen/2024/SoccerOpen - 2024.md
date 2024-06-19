@@ -6,7 +6,7 @@
 
 ### Programming
 
-- [📁 Robot Communication]()
-- [🎮 Robot Control]()
-- [🤖 Algorithm Design]()
-- [📸 Robot Vision]()
+- [📁 Robot Communication](Communication/index.md)
+- [🎮 Robot Control](Control/index.md)
+- [🤖 Algorithm Design](Logic/index.md)
+- [📸 Robot Vision](Vision/index.md)
