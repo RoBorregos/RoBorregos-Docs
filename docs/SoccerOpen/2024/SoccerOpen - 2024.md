@@ -6,10 +6,7 @@
 
 ### Programming
 
-- [📁 Robot Communication](https://robocup-junior.github.io/soccer-rules/master/rules.html)
-- [🎮 Robot Control](https://robocup-junior.github.io/soccer-rules/master/rules.html)
-- [🤖 Algorithm Design](https://robocup-junior.github.io/soccer-rules/master/rules.html)
-- [📸 Robot Vision](https://robocup-junior.github.io/soccer-rules/master/rules.html)
-    - [⚽ Ball Detection](https://robocup-junior.github.io/soccer-rules/master/rules.html)
-    - [🥅 Goalpost Detection](https://robocup-junior.github.io/soccer-rules/master/rules.html)
-    - [🛤️ Line Detection](https://robocup-junior.github.io/soccer-rules/master/rules.html)
+- [📁 Robot Communication](Communication/index.md)
+- [🎮 Robot Control](Control/index.md)
+- [🤖 Algorithm Design](Logic/index.md)
+- [📸 Robot Vision](Vision/index.md)
