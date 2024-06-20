@@ -11,8 +11,20 @@ TODO: modify this.
 
 ## Electronics
 
-- [Jetson Nano](Jetson Nano/RunningJetson/)
--
+- Arduino MEGA 2560
+- Servomotors
+- Raspberry Pi 4 Model B+
+- Pololu Gearmotor Encoder
+- 16-Channel Analog Digital Multiplexer
+- Reflectance Sensor Array: 4-Channel Analog Output QTR-HD-O4A
+- XL4015 Voltage & Current Regulator
+- 3 11.1V LiPo Batteries
+- IR Sensor
+- Stepper motor
+- LEDs
+- Resistors
+- TMC2209 Stepper Motor Driver
+- USB Cameras
 
 ## Programming
 
