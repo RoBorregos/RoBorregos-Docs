@@ -30,5 +30,5 @@ The Soccer Lightweight robot exemplifies robotics through its integration of adv
 
 
 ## Algorithm of Attacking and Defending Robot 
-![Algorithm](../assets/SLW2024/Algorithm_SL2024.png)
+![Algorithm](/assets/SLW2024/Algorithm_SL2024.png)
 
