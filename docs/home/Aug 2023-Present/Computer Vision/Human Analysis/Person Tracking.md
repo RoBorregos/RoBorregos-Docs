@@ -4,7 +4,7 @@ Person tracking requires the robot to identify a person and be able to follow th
 
 ## Person detection
 
-In order to detect people, the `YOLO V8` model was used, obtaining the bounding boxes of each person in each frame. Additionally the `ByteTracker` algorithm was implemented to automatically assign a track_id to each person that is still visible from the previous frame. However, using the default tracker from YOLO was not consistent enough, since people who go behind large objects or even other people are assigned new ids, since this tracker does not keep track of people who leave and re-enter the frame. This introduced the necessity of a re-identification model that could recognize people who have appeared in previous frames, specially because the tracked person could exit the frame at any moment and it is necessary to identify them again to continue following.
+In order to detect people, the `YOLO v8` model was used, obtaining the bounding boxes of each person in each frame. Additionally the `ByteTracker` algorithm was implemented to automatically assign a track_id to each person that is still visible from the previous frame. However, using the default tracker from YOLO was not consistent enough, since people who go behind large objects or even other people are assigned new ids, since this tracker does not keep track of people who leave and re-enter the frame. This introduced the necessity of a re-identification model that could recognize people who have appeared in previous frames, specially because the tracked person could exit the frame at any moment and it is necessary to identify them again to continue following.
 
 ```python
 # Get the results from the YOLOv8 model
