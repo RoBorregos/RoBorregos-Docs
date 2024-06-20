@@ -23,6 +23,8 @@ TODO: modify this.
 - Stepper motor
 - LEDs
 - Resistors
+- TMC2209 Stepper Motor Driver
+- USB Cameras
 
 ## Programming
 
