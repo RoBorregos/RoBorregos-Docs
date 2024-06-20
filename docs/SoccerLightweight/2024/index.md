@@ -23,5 +23,8 @@ TODO: modify this.
 
 ## Programming
 
-- [Jetson Nano](Jetson Nano/RunningJetson/)
-- 
+- [General](Programming/General.md)
+- [IR Detection](Programming/IRDetection.md)
+- [Line Detection](Programming/LineDetection.md)
+- [Motion Control](Programming/Movement.md)
+- [Vision Processing](Programming/Vision.md)
