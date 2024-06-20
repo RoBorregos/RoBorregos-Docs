@@ -19,6 +19,15 @@ There were also three LED indicators for some voltage sources, such as the Ardui
 
 There are some support devices for the components, like the push button to reset the camera. At first, an OpenMV CamH7 Plus was used, but it no longer turned on, so the team had to switch to normal USB cameras to process all the packages for the challenge. This button would be later used as a reset for the Arduino MEGA instead.
 
+The schematic (which was designed on EasyEDA) looked like this at last:
+
+![image](https://github.com/RoBorregos/RoBorregos-Docs/assets/117100165/894fd928-ac53-453b-8de9-c4fba6a924a9)
+
+![image](https://github.com/RoBorregos/RoBorregos-Docs/assets/117100165/ba561a27-9d5b-4703-8b43-307b8e839eb6)
+
+![image](https://github.com/RoBorregos/RoBorregos-Docs/assets/117100165/a65358df-78a8-4054-9abb-a1055380100a)
+
+
 ## PCB Development
 
 A software tool such as EasyEDA can develop Printed Circuit Boards (PCBs) out of electronic schematics, which opens the possibility to integrate many devices in a single board, without the need of making more physical electrical connections than the ones that are explicitly required. Plus, by making a PCB we can be reassured that there will not be any mistakes like overvoltages or short circuits.
