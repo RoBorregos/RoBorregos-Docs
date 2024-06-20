@@ -10,7 +10,7 @@ The XT60 connectors were chosen for all the input voltages since they internally
 
 There were also three indicators for some voltage sources, such as the Arduino's converted supply voltage (which is 3.6V in the schematic, but was made 5V at last), the Arduino's not regulated supply voltage (the 22V line in the schematic, which is now 11.1V), and the motors' supply voltage (the 12V line, 11.1V at last).
 
-There are some support devices for the components, like the push button to reset the camera. At first, an OpenMV CamH7 Plus was used, but it no longer turned on, so the team had to switch to normal USB cameras to process all the packages for the challenge.
+There are some support devices for the components, like the push button to reset the camera. At first, an OpenMV CamH7 Plus was used, but it no longer turned on, so the team had to switch to normal USB cameras to process all the packages for the challenge. This button would be later used as a reset for the Arduino MEGA instead.
 
 ## PCB Development
 
