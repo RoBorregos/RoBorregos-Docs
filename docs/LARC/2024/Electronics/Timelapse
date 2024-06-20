@@ -1,1 +1,4 @@
+#Introduction
+
+For all the devices that would be used in the final product to interact with the computer, the use of a microcontroller and a microprocessor is necessary. It was decided that an Arduino MEGA 2560 would be the chosen microcontroller for this purpose, since it has a worldwide platform that fulfills the connections that are needed for all the devices that were mentioned at first (ex. line sensors, camera, etc.). In addition to this, the Arduino MEGA 2560 has a wide number of digital inputs, as well as PWM inputs, which supports the final decision to implement it on the robot. A microprocessor, the Raspberry Pi 4, was used so that the robot could detect the packages through the cameras, and with the purpose that both the Arduino and the Raspberry Pi can communicate bilaterally.
 
