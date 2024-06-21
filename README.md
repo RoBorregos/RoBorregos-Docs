@@ -51,7 +51,12 @@ pip install -r requirements.txt
 mkdocs serve
 ```
 
-4. Open the browser and go to http://localhost:8000
+4. If you encounter issues with the command not being found try the following
+```{bash}
+python -m mkdocs serve
+```
+
+5. Open the browser and go to http://localhost:8000
 
 ## Deploy
 Pls do not deploy without permission from the repo mantainer.
