@@ -12,7 +12,7 @@ The focus areas include:
 - Computer Vision
 - Object Manipulation
 - System Integration
-
+ 
 The RoboCup@Home competition is divided into three categories: the [Domestic Standard Platform League](https://www.robocup.org/leagues/34) (DSPL), the [Social Standard Platform League](https://www.robocup.org/leagues/15) (SSPL), and the [Open Platform League](https://www.robocup.org/leagues/14) (OPL). Our team competes in the Open Platform League.
 
 In the [Open Platform League](https://www.robocup.org/leagues/14), we have the opportunity to explore and showcase our innovations and advancements without limitations on the choice of hardware platforms. This category allows us to push the boundaries of robotics and demonstrate our capabilities in a variety of areas.
