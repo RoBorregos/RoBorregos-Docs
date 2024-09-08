@@ -1,4 +1,4 @@
-# Overview
+# Integration and Networks
 
 The area of integration and networks is concerned about how all the modules are connected, including hardware and software. 
 
