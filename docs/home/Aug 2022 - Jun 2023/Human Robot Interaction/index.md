@@ -1,8 +1,6 @@
 # Human Robot Interaction
 
-Human-Robot Interaction (HRI) refers to the study and design of interactions between humans and robots. It encompasses the development of technologies, interfaces, and systems that enable effective communication, collaboration, and cooperation between humans and robots. HRI aims to create intuitive and natural ways for humans to interact with robots, allowing for seamless integration of robots into various domains such as healthcare, manufacturing, entertainment, and personal assistance.
-
-In Roborregos the previous work was develop only considering [speech](speech/index.md), a subset of HRI that involves the use of speech recognition and speech synthesis to enable verbal communication between humans and robots. Also the hardware setup of the area and the software modules that are used were developed 
+In Roborregos the previous work was developed only considering [speech](speech/index.md), a subset of HRI that involves the use of speech recognition and speech synthesis to enable verbal communication between humans and robots. Also the hardware setup of the area and the software modules that are used were developed 
 
 The last implementation to get the entities of the text was using GPT-3 API.
 
