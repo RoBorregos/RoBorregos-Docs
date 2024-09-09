@@ -14,7 +14,7 @@ class TestFormat:
         image_paths = TestFormat._get_file_paths('docs', [".png", ".jpg", ".jpeg"])
         
         for path in image_paths:
-            assert "docs/assets" in path
+            assert "docs/assets" in path, "Images must be under /docs/assets"
     
 
 
