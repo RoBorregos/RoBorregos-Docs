@@ -1,0 +1,25 @@
+
+# @Home
+/docs/home/ @RoBorregos/home-integracion
+
+/docs/home/Areas/Navigation.md @RoBorregos/home-nav
+/docs/home/Areas/HRI.md @RoBorregos/home-hri
+/docs/home/Areas/Integration\ and\ Networks.md @RoBorregos/home-integracion
+/docs/home/Areas/Mechanics.md @RoBorregos/home-mecanica
+/docs/home/Areas/Computer\ Vision.md @RoBorregos/home-vision
+/docs/home/Areas/Manipulation.md @RoBorregos/home-manipulacion
+/docs/home/Areas/Electronics\ and\ Control.md @RoBorregos/home-manipulacion
+
+/docs/home/Aug\ 2022\ -\ Jun\ 2023/Human\ Robot\ Interaction/ @RoBorregos/home-hri
+/docs/home/Aug\ 2022\ -\ Jun\ 2023/Mechanics/ @RoBorregos/home-mecanica
+/docs/home/Aug\ 2022\ -\ Jun\ 2023/Integration\ and\ Networks/ @RoBorregos/home-integracion
+/docs/home/Aug\ 2022\ -\ Jun\ 2023/Electronics\ and\ Control/ @RoBorregos/home-electronica
+/docs/home/Aug\ 2022\ -\ Jun\ 2023/Computer\ Vision/ @RoBorregos/home-vision
+
+/docs/home/Aug\ 2023\ -\ Jun\ 2024/Human\ Robot\ Interaction/ @RoBorregos/home-hri
+/docs/home/Aug\ 2023\ -\ Jun\ 2024/Mechanics/ @RoBorregos/home-mecanica
+/docs/home/Aug\ 2023\ -\ Jun\ 2024/Integration\ and\ Networks/ @RoBorregos/home-integracion
+/docs/home/Aug\ 2023\ -\ Jun\ 2024/Electronics\ and\ Control/ @RoBorregos/home-electronica
+/docs/home/Aug\ 2023\ -\ Jun\ 2024/Computer\ Vision/ @RoBorregos/home-vision
+/docs/home/Aug\ 2023\ -\ Jun\ 2024/Manipulation/ @RoBorregos/home-manipulacion
+/docs/home/Aug\ 2023\ -\ Jun\ 2024/Navigation/ @RoBorregos/home-nav

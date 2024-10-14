@@ -13,7 +13,7 @@ Welcome to the RoBorregos Official documentation. This documentation is based on
 ## Add new page
 
 To add a new page, locate the docs directory.
-```{bash}
+```bash
 ROBORREGOS-DOCS
 │   mkdocs.yml
 │   requirements.txt
@@ -37,25 +37,38 @@ To add new images, add them to the assets folder. Preferably, use the same name 
 To run the documentation locally, you need to have python installed.
 
 1. Clone the repository
-```{bash}
+```bash
 git clone https://github.com/RoBorregos/RoBorregos-Docs.git
 ```
 
 2. Install the requirements
-```{bash}
+```
 pip install -r requirements.txt
 ```
 
 3. Run the server
-```{bash}
+```bash
 mkdocs serve
 ```
 
-4. Open the browser and go to http://localhost:8000
+4. If you encounter issues with the command not being found try the following
+```bash
+python -m mkdocs serve
+```
+
+5. Open the browser and go to http://localhost:8000
+
+## Test
+Run formatting tests
+```bash	
+pip install -r requirements_test.txt
+# At root directory of project
+pytest 
+```
 
 ## Deploy
 Pls do not deploy without permission from the repo mantainer.
-```{bash}	
+```bash	
 mkdocs gh-deploy
 ```
 

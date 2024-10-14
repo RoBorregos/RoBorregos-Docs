@@ -17,6 +17,13 @@ markdown_extensions:
       generic: true
   - attr_list
 
+validation:
+  links:
+    absolute_links: relative_to_docs
+
+plugins:
+  - search
+  - awesome-pages
 
 extra_javascript:
   - javascripts/mathjax.js
