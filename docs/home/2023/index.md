@@ -1,4 +1,4 @@
-# Developments from 2023-2024
+# Achievements from 2023
 
 This year development is focused around expanding and updating the software areas of our current hardware setup, with a new project based on the development of a custom omnidirectional mobile base.
 
