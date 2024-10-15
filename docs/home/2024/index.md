@@ -23,7 +23,13 @@ These are the major achievements divided by area:
 - The package `frida_language_processing` was created, with the command interpreter capable of storing context throughout the execution, a cleaner implementation of the embeddings match process for actual items in the scene, and specific features for the **Receptionist** task.
 
 ### Speech
-- Keyword spotting
+- Keyword spotting (@Oscar-gg)
+
+### Display
+- Nadota (@FranciscoSP)
+
+## [Computer vision](Computer%20vision/index.md)
+- Nadota (@Ale-Coeto)
 
 ## [Manipulation](Manipulation/index.md)
 - Nadota (@deivideich, @emilianh)
