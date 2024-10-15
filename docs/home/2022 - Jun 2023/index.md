@@ -1,4 +1,5 @@
-# Developments from 2022-2023
+# Achievements from 2022 - June 2023
+This period was characterized by the acquisition of a new hardware platform (Dashgo B1 + xArm 5) which was assembled with the purpose of having a functional platform to compete on the Mexican Robotics Tournament 2023. The main focus during this period was pure development, paved with hardware and integration issues.
 
 ## Electronics and Control
 Designed and manufactured a PCB for handling the SCARA robot's motors and arm. 
