@@ -1,6 +1,9 @@
-# Developments from 2023-2024
+# Achievements from 2023
 
-This year development is focused around expanding and updating the software areas of our current hardware setup, with a new project based on the development of a custom omnidirectional mobile base.
+This year was focused around expanding and updating the software areas of our current hardware setup, focusing in the tasks for the competition, and a side new project based on the development of a custom omnidirectional mobile base.
+After participating in the Mexican Robotics Tournament, a lot of senior college member of the team graduated, transfering the knowledge and leadership. New features were built on top of the previous developments, with the purpose of submitting the qualification material for the RoboCup 2024 competition.
+
+Here is our uploaded [Team Description Paper](https://athome.robocup.org/wp-content/uploads/OPL-RoBorregosTDP2023.pdf) and [Video](https://www.youtube.com/watch?v=rPmSxZlzO78), for the Second Call for Participation for the Open Platform League.
 
 ## [Electronics and Control](Electronics%20and%20Control/index.md)
 - Started development of PCBs for the omnidirectional mobile base.
@@ -25,7 +28,6 @@ This year development is focused around expanding and updating the software area
 ## [Integration and Networks](Integration%20and%20Networks/index.md)
 ### ROS
 - Replaced a previous web socket solution for communicating two roscores with a multimaster solution, allowing for more robust and faster communication between the robot software modules.
-- Started development of ROS2 migration.
 
 ## [Computer Vision](Computer%20Vision/index.md)
 ### Human Recognition
