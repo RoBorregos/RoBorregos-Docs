@@ -194,7 +194,7 @@ As you might have seen in the [Cannot reflash AGX device - incorrect EEPROM valu
 
 We repeated the steps changing the value of `0x02` to `0xfc` and the CRC value to `0xdb`. After doing this, the SDK Manager was able to flash the device successfully.
 
-## Thanks to the internal response
+## Thanks to the internal response team for this incident:
 - Leonardo Llanas.
 - Diego Hernandez.
 - Gerardo Fregoso.
