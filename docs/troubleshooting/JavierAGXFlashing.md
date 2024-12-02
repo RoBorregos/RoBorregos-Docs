@@ -36,7 +36,7 @@ We were able to successfully flash the device with a working system **in the eMM
 #### Observations:
 
 1. You might see how in the tutorial steps, the last step is to use the `flash.sh` script to flash the device, like so:
-![flash.sh](/docs/assets/troubleshooting/jetson-flashers/flash-sh-sample-usage.png)
+![flash.sh](/troubleshooting/jetson-flashers/flash-sh-sample-usage.png)
 
     ```bash
     sudo ./flash.sh jetson-agx-xavier-devkit internal
@@ -169,7 +169,7 @@ After a simple lookup in the [EEPROM layout page](https://docs.nvidia.com/jetson
 
 > **Warning:** This (`0xfe`) isnt the correct value for the "Lenght of module ID" field. This is just us following the layout table and the value given in it. THIS ISNT CORRECT.
 
-![Eeprom layout table](/docs/assets/troubleshooting/jetson-flashers/layout-eeprom.png)
+![Eeprom layout table](/troubleshooting/jetson-flashers/layout-eeprom.png)
 
 We then modified the EEPROM values using the `i2cset` command. 
 
