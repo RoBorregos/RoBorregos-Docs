@@ -3,11 +3,11 @@
 
 Our jetson device is a Xavier AGX system (Javier AGX DevKit 32GB) and we entered a bad state for our OS. We had some issues with the apt package manager, and had several other issues with the device related to this, like faulty drivers and other system issues. We decided to reflash the device to start from scratch and fix the issues.
 
-We stared trying to reflash the device using the SDK Manager, but we encountered an error during the `linux flashing` step. 
+We stared trying to reflash the device using the SDK Manager, but we encountered an error during the `linux flash` step. 
 
 ## Problem
 
-When trying to flash our Xavier AGX system (Javier AGX DevKit 32GB) using the SDK Manager, the `linux flashing` step fails with the following error:
+When trying to flash our Xavier AGX system (Javier AGX DevKit 32GB) using the SDK Manager, the `linux flash` step fails with the following error:
 ```
 Parsing board information failed.
 ```
