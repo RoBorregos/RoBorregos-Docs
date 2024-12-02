@@ -68,6 +68,7 @@ We followed these two conversations with related issues:
 And this EEPROM layout [page](https://docs.nvidia.com/jetson/archives/r34.1/DeveloperGuide/text/HR/JetsonEepromLayout.html)
 
 Now, at first we have to state two clear problems:
+
 1. There's no actual way to know where the EEPROM corruption is. We knew that this COULD be the problem, but we didn't know for sure and we didn't knew where exactly in our EEPROM values the corruption was other than go through the whole EEPROM values and check them one by one.
 2. The only way to modify the EEPROM values is to use the `i2c` bus. This means that we needed a working system to access the EEPROM values and modify them.
 
