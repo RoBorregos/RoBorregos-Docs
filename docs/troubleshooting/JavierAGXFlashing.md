@@ -199,5 +199,6 @@ We repeated the steps changing the value of `0x02` to `0xfc` and the CRC value t
 - Diego Hernandez.
 - Gerardo Fregoso.
 - Oscar Arreola.
+- Angel Cervantes.
 
 Written by: Ivan Romero.
