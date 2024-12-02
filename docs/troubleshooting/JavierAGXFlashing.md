@@ -180,7 +180,7 @@ sudo i2cset -y 0 0x50 0x02 0xfe
 We then calculated the CRC value again and it was `0xe9`. We then modified the CRC value in the EEPROM values.
 
 ```bash
-sudo i2cset -y 0 0x50 0xf0 0xe9
+sudo i2cset -y 0 0x50 0xff 0xe9
 ```
 
 We then tried to flash the device with the SDK Manager again and it gave us the **same error again**. 
