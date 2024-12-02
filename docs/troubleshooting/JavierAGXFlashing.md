@@ -117,6 +117,8 @@ e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................
 f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 f0    ...............?
 ```
 
+> **Warning:** These are our EEPROM values. This are not be the same for your device. 
+
 We made a simple script to parse the values from the EEPROM and calculate the CRC value. 
 
 ```python
