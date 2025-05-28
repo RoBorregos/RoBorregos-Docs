@@ -7,7 +7,6 @@ This repository contains the ROS 2 nodes and documentation for interfacing an ST
 ## 📚 Contents
 
 - [Status](#-status)
-- [To Do](#-to-do)
 - [Topic Overview](#-topic-overview)
 - [ros2 development (home_electronics branch)](#-ros2-development-home-electronics-branch)
 - [STM32 Project Repository](#-stm32-project-repository)
