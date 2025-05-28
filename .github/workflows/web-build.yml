@@ -1,0 +1,41 @@
+name: Node.js build 
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:  # Define environment variables at the workflow level
+  PERSONAL_ACCOUNT: roborregosteam
+
+jobs:
+  check-and-fork:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Check if repo exists
+        id: check_repo
+        if: ${{ github.repository_owner != env.PERSONAL_ACCOUNT }}
+        run: |
+          REPO_NAME="${{ github.event.repository.name }}"
+          OWNER_NAME="${{ env.PERSONAL_ACCOUNT }}"
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" https://api.github.com/repos/${OWNER_NAME}/${REPO_NAME})
+
+          if [ "$RESPONSE" -eq 404 ]; then
+            echo "Repository does not exist."
+            echo "fork_repo=true" >> $GITHUB_ENV
+          else
+            echo "Repository exists."
+            echo "fork_repo=false" >> $GITHUB_ENV
+          fi
+
+      - name: Fork the repository if it does not exist
+        if: env.fork_repo == 'true'
+        run: |
+          curl -L -X POST \
+          -H "Authorization: Bearer ${{ secrets.RBRGS_TEAM_GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github+json" \
+          https://api.github.com/repos/${{ github.repository }}/forks
