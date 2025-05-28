@@ -95,7 +95,7 @@ Control for one motor succesfully tested, must check PID gains & test 4 motors s
 
 ## 🔗 ROS2 Development home electronics branch
 
-👉 [GitHub Repo for ROS2 development so far](https://github.com/RoBorregos/home-electronics/tree/omnibase])
+👉 [GitHub Repo for ROS2 development so far](https://github.com/RoBorregos/home-electronics/tree/omnibase)
 
 ---
 
