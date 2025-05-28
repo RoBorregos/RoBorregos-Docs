@@ -9,7 +9,7 @@ This repository contains the ROS 2 nodes and documentation for interfacing an ST
 - [Status](#-status)
 - [To Do](#-to-do)
 - [Topic Overview](#-topic-overview)
-- [ros2 development (home_electronics branch)](#-ROS2-Nodes-(home-electronics-branch))
+- [ros2 development (home_electronics branch)](#-ros2-development-home-electronics-branch)
 - [STM32 Project Repository](#-stm32-project-repository)
 - [Appendix](#appendix)
 
@@ -93,7 +93,7 @@ Control for one motor succesfully tested, must check PID gains & test 4 motors s
 
 ---
 
-## 🔗 ROS2 Nodes (home electronics branch)
+## 🔗 ROS2 Development home electronics branch
 
 👉 [GitHub Repo for ROS2 development so far]([https://github.com/Roger412/STM32H7_OMNIBASE_FREERTOS.git](https://github.com/RoBorregos/home-electronics/tree/omnibase])
 
