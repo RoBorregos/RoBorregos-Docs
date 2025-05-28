@@ -102,6 +102,7 @@ Control for one motor succesfully tested, must check PID gains & test 4 motors s
 ## 🔗 STM32 Project Repository
 
 👉 [GitHub Repo for STM32ubeIDE Project **STM32H7_OMNIBASE_FREERTOS**](https://github.com/Roger412/STM32H7_OMNIBASE_FREERTOS.git)
+
 ---
 
 ## 📎 Appendix
