@@ -18,9 +18,19 @@ In this way the speed of each motor is taken out so that the PID control allows 
 
 To make the robot go in a specific orientation, the control was implemented with reference to the gyroscope (BNO), so that also for this one the constants had to be modified to reach as soon as possible its setpoint without much oscillation. For this the actual angle was used, i.e. the reference of the BNO and the desired angle if it was loaded more to one side the speed of the motors on the same side increased to reach their respective angle.
 
+## Control speed respect target distance
+
+The robot must move forward in a controlled manner, and sudden braking should be avoided so that it stops at the desired position. For this reason, as it approaches the target distance, its speed should gradually decrease. To achieve this, the map function is used by inputting the minimum and maximum speeds relative to the initial and final distances.
+
+## PID Diagram
+
+![PID_Diagram](/docs/assets/maze/PID.png)
+
+
 ## PID Walls
 
-In certain scenarios as would be the case of the ramp there are always walls on its sides so it was devised to apply a control with respect to the distances of the sides that is to say that if it was told to keep 7cm distance with respect to the wall this oscillated to reach that point and leave the ramp, of course the counters had to be modified to reach the desired behavior as well as the desired distance.
+In certain scenarios as would be the case of the ramp there are always walls on its sides so it was devised to apply a control with respect to the distances of the sides that is to say that if it was told to keep the same distance to both walls, this oscillated to reach that point and leave the ramp, of course the counters had to be modified to reach the desired behavior as well as the desired distance.
+
 
 Impementation of PID:
 [here](https://github.com/RoBorregos/RescueMaze2024/blob/nacionalNewMovement/PIDmotores/PID.cpp)

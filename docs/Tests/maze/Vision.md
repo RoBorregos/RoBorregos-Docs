@@ -18,7 +18,8 @@ The protocol uses 8 bytes:
 
 The protocol uses headers to ensure safe sending and receiving of information. The packet size indicates the length of the message, the command specifies the required action (e.g., return detection result from right or left camera), and the 4-byte parameter can be used for additional configurations (e.g., initializing at 115200 baud).
 
-<img src="/assets/maze/Vision_diagram.png" alt="Vision_diagram">
+![Vision_diagram](/docs/assets/maze/Vision_diagram.png)
+
 ## TensorFlow Model Architecture
 
 The model is based on Google’s MobileNet, trained using transfer learning.

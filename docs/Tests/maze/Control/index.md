@@ -18,8 +18,6 @@ A PID controller continuously calculates an error value as the difference betwee
 and a measured process variable and applies a correction based on proportional, integral, and derivative
 terms (sometimes denoted P, I, and D respectively) which give their name to the controller type. 
 
-- Copilot
-
 In RescueMaze, a PID controller was used to make the robot move straight and rotate to the desired angles.
 The PID control regulated the PWM signal sent to the motors such that they approached a target RPM.
 In addition, the RPM targets were increased or diminished depending on the error between the current angle
@@ -27,3 +25,38 @@ and angle of the desired orientation.
 
 See [PID](PID.md) for information about the PID implementation.
 
+## Code
+
+The main class of control is motors class and alghorith only use this functions:
+
+    -void ahead();   
+    -void rotate(float);
+    To go forward and rotate
+    -void harmedVictim();
+    -void stableVictim();
+    -void unharmedVictim();
+    To do dispense kit and do the victim sequency with leds
+    -bool isWall(uint8_t);
+    to know if is wall
+    -void checkpointElection();
+    to manage checkpoint
+and global variables:
+    -bool blackTile
+    -bool blueTile
+    -bool checkpoint
+    -uint8_t victim
+    -uint8_t kitState
+    -bool buttonPressed
+    -uint8_t rampState
+
+All the rest of the functions and action are handled mainly for the ahead function like read sensor and react in real time for exemple:
+-read the TCS34725 and react if there is a black tile or wait if there is a blue tile
+-read the limit switches and do a rutine
+-read the encoder pulses and BNO055 angule to use PID adequately
+-manage the ramps
+-manage the vlx´s feedback
+
+## Debug and calibration 
+For debugging and calibrate, a OLED screen is used to show sensor detections, and a test class was made with functions to debug all the sensors and PID, aditional this class has calibrateColors function to detect and show rgb of the black, blue, default and checkpoint tiles
+
+![ScreenCalibration](/docs/assets/maze/screen.jpg)
