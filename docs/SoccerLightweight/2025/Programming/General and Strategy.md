@@ -1,19 +1,22 @@
 # General
 
-We organized our codebase into modular libraries utilizing Github for collaborative work. Each library corresponds to a specific hardware component, this was done in order to improve code readability and make a more maintainable and scalable system. The considerations for modularity have let us debug our code quickly and efficiently. 
+![foto](Horchata_jamaica.jpg)
+We structured our codebase into modular libraries and used GitHub to support collaborative development. Each library corresponds to a specific hardware component, which improves code readability and contributes to a more maintainable and scalable system. This modular approach has also allowed us to debug efficiently and make quick adjustments when needed.
 
-For robot programming, we use Visual Studio Code together with the PlatformIO extension, which allows us to work in a more organized and professional way with microcontrollers like Teensy and Arduino. PlatformIO provides support for multiple boards, code autocompletion, version control, and better library management, which significantly enhances our development workflow.
-We also use GitHub as our platform for file management and team coordination. It hosts all our code and design files online, making them accessible to all team members at any time and location. This ensures that everyone always works with the latest version and that collaboration runs smoothly.
-Additionally, we use GitHub Desktop, a graphical interface that simplifies the use of GitHub, especially for members who are less familiar with command-line tools. We publish both our software and hardware developments there
+For programming the robots, we use Visual Studio Code along with the PlatformIO extension. This setup provides a more organized and professional environment for working with microcontrollers such as Teensy and Arduino. PlatformIO offers multi-board support, code autocompletion, integrated version control, and efficient library management—all of which significantly streamline our development workflow.
 
-Link:[GitHub Repository](https://github.com/RoBorregos/Soccer-Lightweight-2025.git)
+GitHub serves as our central platform for version control, file sharing, and team coordination. It hosts all our software and hardware files, making them easily accessible to every team member regardless of time or location. This ensures everyone is always working with the most up-to-date versions and helps maintain smooth collaboration across the team.
+
+Additionally, we use GitHub Desktop, a graphical interface that simplifies Git workflows—especially for members less familiar with command-line tools. We use it to publish and manage both our software and hardware development.
+
+
+Link: [GitHub Repository](https://github.com/RoBorregos/Soccer-Lightweight-2025.git)
 
 ## Tools
 
 The main tools used to program the robot are:
 
--Visual Studio Code
- (IDE with the PlatformIO extension)
+-Visual Studio Code (IDE with the PlatformIO extension)
 -Pixymon (Software used to configure the Pixy Camera)
 
 ## Strategy
