@@ -69,8 +69,6 @@ solution was to check if the tile exists after added to the map.
 
 ## Console Tests – Support diagrams
 
-![DFS console output](image-page-2)
-
 ![Console1](/docs/assets/maze/Console1.png)
 ![Console2](/docs/assets/maze/Console2.png)
 
