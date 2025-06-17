@@ -1,6 +1,7 @@
 # General
 
 ![foto](Horchata_jamaica.jpg)
+
 We structured our codebase into modular libraries and used GitHub to support collaborative development. Each library corresponds to a specific hardware component, which improves code readability and contributes to a more maintainable and scalable system. This modular approach has also allowed us to debug efficiently and make quick adjustments when needed.
 
 For programming the robots, we use Visual Studio Code along with the PlatformIO extension. This setup provides a more organized and professional environment for working with microcontrollers such as Teensy and Arduino. PlatformIO offers multi-board support, code autocompletion, integrated version control, and efficient library management—all of which significantly streamline our development workflow.

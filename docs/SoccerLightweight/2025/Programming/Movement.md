@@ -21,11 +21,18 @@ float upper_right_speed = cos(((degree - 30) * PI / 180)) * speed + speed_w;
 These speed values are then passed to the SetSpeed() method of each motor, which handles the direction and PWM-based speed control:
 ```cpp
 void Motor::SetSpeed(float speed) {
-    if (speed >= 0) MovePositive();
-    else MoveNegative();
-
-    speed = abs(speed) * kMaxPWM;
-    speed = constrain(speed, 0, kMaxPWM);
+    if (speed >= 0) { 
+        MovePositive();
+    } else {
+        MoveNegative();
+    }
+    speed = abs(speed);
+    speed = speed * kMaxPWM;
+    if (speed > kMaxPWM) {
+        speed = kMaxPWM;
+    } else if (speed < kMinPWM) {
+        speed = 0;
+    }
     analogWrite(inPWM_, speed);
 }
 ```
