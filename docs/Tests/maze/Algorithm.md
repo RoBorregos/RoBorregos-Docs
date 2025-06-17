@@ -71,13 +71,13 @@ solution was to check if the tile exists after added to the map.
 
 ![DFS console output](image-page-2)
 
-![Console1](/docs/assets/maze/Architecture.png)
-![Console2](/docs/assets/maze/Architecture.png)
+![Console1](/docs/assets/maze/Console1.png)
+![Console2](/docs/assets/maze/Console2.png)
 
 ### Algorithm Flowchart
 
-![Algorithm flowchart](/docs/assets/maze/Architecture.png)
+![Algorithm flowchart](/docs/assets/maze/FlowChart.png)
 
 ### Maze Graphical Representation
 
-![Maze diagrams](/docs/assets/maze/Architecture.png)
+![Maze diagrams](/docs/assets/maze/mazeDiagram.png)
