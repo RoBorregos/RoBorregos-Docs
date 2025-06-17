@@ -1,36 +1,83 @@
-Similar to last year's implementation, the algorithm of choice for traversing the maze was a **Depth First Search** (DFS) routine using a **Dijkstra's shortest path** implementation for calculating routes between tiles.
+# Maze Exploration Algorithm
 
-##Implementation
-During planning, it was decided to first work on a self contained C++ iteration of the code in order to test it only using the terminal. This was, because the programmer in charged of this area wasn't going to have access to the robot prototype during winter break.
-Once this was done, a migration to arduino was worked on next. Problems arouse because testing was first conducted using an arduino mega, while the final robot was supposed to use an ESP32 microcontroller and incompatibility between libraries were found. Most of these, were used to imitate data structures from the Standard Template Library which were not available in arduino, which was also a big setback.
+It is based in a Depth exploration using DFS as an algorithm with Dijkstra as path planning
+algorithm. This implementation avoids blue and black tiles while keeping record of the
+victims already detected.
 
-##Tiles
-A map of the tiles is saved in the robot's memory and the information can be accessed using the x, y and z positions. In each tile data is saved like the availible adjecent tiles, the weight to visit the tile, if a victim has been detected already, if it's floor is black or if its a checkpoint.
+## Implementation
 
-##Depth First Search
-This type of exploration algorithm prioritices visiting new tiles until a dead end is found before backtracking to visit another tile. This was prefered over a Breadth First Search algorithm that, instead of searching a complete area one by one, seeks to visit other parts of the maze first.
+First, the algorithm was based on a basic DFS exploration implemented with recursion and
+back movements. However, when leading with embedding systems, memory and execution
+time should be the most optimal. Therefore, recursion was not an option and using
+dynamic memory was not available. So, an iterative DFS algorithm was implemented along
+with a linked list performed as a Stack. Moreover, to optimize back-movements, a reverse
+movement was applied to optimize the robot’s positions, but to optimize the exploration it
+should implement a path planner and the perfect algorithm was Dijkstra. Finally, Tiles were
+optimized, data structures were stablished at a custom size due to the lack of memory in
+the ESP32 microcontroller and implemented a map saving function.
 
-##Dijkstra's shortest path
-This famous algorithm is used to determine the best availible path between two coordinates, avoiding blue tiles, ramps and bumpers which would make the shortest path slower. This is a huge time saver compared of simple recursive backtracking.
+## DFS Exploration
 
-##Engine
-Saving the information of the maze is crucial, because it avoids wasting time going to already visited tiles, dropping uneccesary kits, etc. Keeping track of the robot's position at all times allows us to know the current and adjacents tile's information and finding it's way back to the start in order to achieve bonus points.
+This was implemented with a clockwise priority, focusing on always exploring to the front,
+this algorithm was selected due to the movements and time optimization. It was
+implemented alongside four data structures: stack of unvisited coordinates, array of visited
+coordinates, array of tiles, and array of tiles coordinates.
 
-##C++ terminal testing
-Using a bidimentional characters array we were able to simulate the robot's behavior virtually and test the algorithm's functionality in various casescenarios easly.
+## Dijkstra Path Planning
 
-| Symbol | Represents |
-| ----- | ----- |
-| # | Wall |
-| > | Move right |
-| < | Move left |
-| ^ | Move up |
-| / | Move down |
-| S | Start of path |
-| E | End of path |
-| r | Ramp inclined right |
-| l | Ramp inclined left |
-| u | Ramp inclined up |
-| d | Ramp inclined down |
+For path planning algorithm, this algorithm was used for searching and identifying the
+shortest path from the starting tile to the end tile. The path was obtained based on weights
+for each tile, and each coord of the path was saved in a stack for easy navigation.
 
-![C++ terminal](/assets/maze/c++maze.png)
+## Tiles
+
+Each Tile object saves important information about each tile, such as victims, checkpoints,
+obstacles, black tiles, adjacent tiles and walls direction. Also set weights for diLerent tiles
+type, like blue, black, wall and white tiles.
+
+## Victims
+
+Since it can be just one victim per tile, each tile can save up to one victim per tile.
+Therefore, a system was implemented for dealing with victims in 90 degrees angle and in
+endpoints.
+
+## Map & Button
+
+A map saving function was implemented for handling checkpoints and could retrieve map
+information that was already explored. However, this function was not available due to
+other problems regarding checkpoint detection. Moreover, a full reset of the map was
+implemented in the robot.
+
+On the other hand, the button function was implemented with a time-based system, where
+if the button was pressed over half a second, it will restart the ESP microcontroller
+reinitializing all the sensors, but when pressed less than this time, it will restart just the
+algorithm.
+
+## Ramps
+
+A multiple level maze exploration algorithm was implemented, handling the tiles
+assignment when detected a ramp up or down. It was saved inside the map, and the robot
+can continue the exploration in multiple levels.
+
+## Main problems
+
+We encounter with diLerent logic and resources problems. Initially we had Stack Overflow
+problems due to the RAM of the microcontroller, where we were forced to reduce the
+amount of information we can keep inside the ESP to a limited size. Also, a logic problem
+emerged when exploring the map, since Tiles where duplicated inside the map and the
+solution was to check if the tile exists after added to the map.
+
+## Console Tests – Support diagrams
+
+![DFS console output](image-page-2)
+
+![Console1](/docs/assets/maze/Architecture.png)
+![Console2](/docs/assets/maze/Architecture.png)
+
+### Algorithm Flowchart
+
+![Algorithm flowchart](/docs/assets/maze/Architecture.png)
+
+### Maze Graphical Representation
+
+![Maze diagrams](/docs/assets/maze/Architecture.png)
