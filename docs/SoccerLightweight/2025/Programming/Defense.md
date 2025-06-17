@@ -1,6 +1,6 @@
 # Strategy
 
-## Horchata 🥛
+## Horchata (Defender)🥛
 
 Our defending robot was programmed to operate within a defined zone on the field. This area was limited both horizontally and vertically to ensure it stayed close to the goal and maintained an effective defensive position.
 
