@@ -1,4 +1,3 @@
-# Abstract
 ![Team](Soccer_team.jpg)
 
 For the Soccer Lightweight 2025 competition, four team members were designated to participate. Lupita Mota was responsible for electronics, Juan Pablo González led the mechanical design, and Rodrigo Bahena along with Camila Tite handled the programming.
