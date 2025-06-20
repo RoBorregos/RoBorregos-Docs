@@ -1,11 +1,19 @@
 # Dispenser
 
-The rescue kit deployment mechanism consists of a rack and pinion mechanism design to deploy kits on different sides of the robot, the design had quite a few changes and problems such as the difficulty of centering the servo motor to grab more kits in the storage tower however we mechanically increased the margin that could have the servo and through coding we managed to have a more reliable system.
+Description: 
 
-Even so, it was never as reliable as we would expect, starting with how careful we had to be sometimes just to put the kits in.
+The final dispenser of our robot was made using an oscillatory pendulum-like motion. It uses a servomotor to move a central part with two compartments from side to side and allows for the dispense of a kit or two kits to either side of the robot. When a kit is dispensed, another one is loaded into the second compartment and so on.  
 
-To avoid this I think having heavier kits would somehow help but above all try to make the mechanism as simple as possible over any other advantage.
+This final design underwent a lot of changes from the regional to the national competition. First of all, the central part was first thought to hold all of the kits and dispense them one by one. There were some issues however, the kits could only be dispensed through one compartment and the servomotor we were using was not able to circle the whole 360 degrees, only 180, allowing for only 6 kits to be able to be dispensed.  
 
-Among the good things the design had  was the space occupied, and how “unobtrusive” it was, using only a free part below the base and without having to put a prominent tower, however except for the tower that could interfere in case of using a lidar, these advantages were mostly aesthetic.
+Considering all the above, the final dispenser was made. 
+
+
+Challenges: 
+
+The challenges or issues that we faced were more in relation to the kits rather than the dispenser itself. Some of the kits would get stuck and then the servomotor would fail and, also, once dispensed they would bound off too much, sometimes so much so that they would not fit inside the designated area or a radius of 15 cm in the tile. 
+
+To solve these problems, a chamber was made to the kits and dispenser to prevent the kits on the tower (the ones that have not yet been loaded) would not get stuck while the dispenser was oscillating. Additionally, to solve the bouncing issue, several solutions were considered, like making the kits more flexible so that they wouldn't bounce as much and adding more weight to them. The final version of the kits was made with PLA and had a hole in the center where nuts or other small heavy items could be stuffed inside to add weight. These kits worked much better and allowed for more consistent results. 
+
 
 ![Dispenser](/assets/maze/Dispenser.png)
