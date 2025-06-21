@@ -27,29 +27,34 @@ See [PID](PID.md) for information about the PID implementation.
 
 ## Code
 
-The main class of control is motors class and alghorith only use this functions:
+The main class of control is motors class and algorith only use this functions:
+    To go forward
+        -void ahead();
 
-    -void ahead();   
-    -void rotate(float);
-    To go forward and rotate
-    -void harmedVictim();
-    -void stableVictim();
-    -void unharmedVictim();
+    To rotate   
+        -void rotate(float);
+
     To do dispense kit and do the victim sequency with leds
-    -bool isWall(uint8_t);
-    to know if is wall
-    -void checkpointElection();
-    to manage checkpoint
-and global variables:
-    -bool blackTile
-    -bool blueTile
-    -bool checkpoint
-    -uint8_t victim
-    -uint8_t kitState
-    -bool buttonPressed
-    -uint8_t rampState
+        -void harmedVictim();
+        -void stableVictim();
+        -void unharmedVictim();
 
-All the rest of the functions and action are handled mainly for the ahead function like read sensor and react in real time for exemple:
+    To know if is wall in elect direction
+        -bool isWall(uint8_t);
+
+    To manage checkpoint
+        -void checkpointElection();
+    
+    And global variables:
+        -bool blackTile
+        -bool blueTile
+        -bool checkpoint
+        -uint8_t victim
+        -uint8_t kitState
+        -bool buttonPressed
+        -uint8_t rampState
+
+All the rest of the functions and action are handled mainly for these function for exemple:
 -read the TCS34725 and react if there is a black tile or wait if there is a blue tile
 -read the limit switches and do a rutine
 -read the encoder pulses and BNO055 angule to use PID adequately
@@ -60,3 +65,12 @@ All the rest of the functions and action are handled mainly for the ahead functi
 For debugging and calibrate, a OLED screen is used to show sensor detections, and a test class was made with functions to debug all the sensors and PID, aditional this class has calibrateColors function to detect and show rgb of the black, blue, default and checkpoint tiles
 
 ![ScreenCalibration](/docs/assets/maze/screen.jpg)
+
+## Problems
+
+### Ramp
+
+Because the Jetson Nano is located at the front, the robot may tip over at a certain speed. To address this, the variable rampCaution was implemented. It becomes true if the front VLX sensor detects a very large distance, causing the robot to move more slowly.
+### Color detection 
+
+An attempt was made to implement color detection using HSV values to avoid the need for calibration. However, the values were not consistent, so the system reverted to using calibrated RGB values.
