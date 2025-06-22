@@ -29,4 +29,4 @@ The main developments during 2025 with respect to previous years are the followi
 ## Code Structure
 
 The following diagram shows the code structure:
-![Architecture](/docs/assets/maze/Architecture.png)
+![Architecture](/assets/maze/Architecture.png)

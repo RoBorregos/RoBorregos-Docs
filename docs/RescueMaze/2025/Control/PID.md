@@ -24,7 +24,7 @@ The robot must move forward in a controlled manner, and sudden braking should be
 
 ## PID Diagram
 
-![PID_Diagram](/docs/assets/maze/PID.png)
+![PID_Diagram](/assets/maze/PID.png)
 
 
 ## PID Walls

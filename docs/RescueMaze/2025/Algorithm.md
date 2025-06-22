@@ -37,13 +37,13 @@ We encounter with different logic and resources problems. Initially we had Stack
 
 ## Console Tests – Support diagrams
 
-![Console1](/docs/assets/maze/Console1.png)
-![Console2](/docs/assets/maze/Console2.png)
+![Console1](/assets/maze/Console1.png)
+![Console2](/assets/maze/Console2.png)
 
 ### Algorithm Flowchart
 
-![Algorithm flowchart](/docs/assets/maze/FlowChart.png)
+![Algorithm flowchart](/assets/maze/FlowChart.png)
 
 ### Maze Graphical Representation
 
-![Maze diagrams](/docs/assets/maze/mazeDiagram.png)
+![Maze diagrams](/assets/maze/mazeDiagram.png)

@@ -64,7 +64,7 @@ All the rest of the functions and action are handled mainly for these function f
 ## Debug and calibration 
 For debugging and calibrate, a OLED screen is used to show sensor detections, and a test class was made with functions to debug all the sensors and PID, aditional this class has calibrateColors function to detect and show rgb of the black, blue, default and checkpoint tiles
 
-![ScreenCalibration](/docs/assets/maze/screen.jpg)
+![ScreenCalibration](/assets/maze/screen.jpg)
 
 ## Problems
 
