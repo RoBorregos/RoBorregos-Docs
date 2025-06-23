@@ -1,5 +1,5 @@
 # Motion Control
-![Movement](Movement.png)
+![Movement](images/Movement.png)
 
 The robot’s movement system is based on a three-motor omnidirectional base, allowing it to move in any direction without needing to rotate first. This flexibility is crucial for quick responses and smooth navigation in dynamic environments, such as robotic competitions.
 
@@ -16,7 +16,7 @@ float upper_left_speed  = cos(((degree - 150) * PI / 180)) * speed + speed_w;
 float lower_center_speed = cos(((degree - 270) * PI / 180)) * speed + speed_w;
 float upper_right_speed = cos(((degree - 30) * PI / 180)) * speed + speed_w;
 ```
-![Speed](Movement_diagram.png)
+![Speed](images/Movement_diagram.png)
 
 These speed values are then passed to the SetSpeed() method of each motor, which handles the direction and PWM-based speed control:
 ```cpp
