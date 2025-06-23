@@ -7,7 +7,7 @@ To compute each motor’s speed, we use a cosine-based control method. The syste
 
 The desired movement angle (relative to the robot's forward direction),
 
-A normalized linear speed value (ranging from 0 to 1).
+A normalized linear speed value (ranging from 0 to 1) This allows to manage speed parameter in terms of percentage.
 
 Using these inputs, the speed for each motor is calculated with cosine transformations shifted by specific angles (150°, 270°, and 30° respectively), allowing for proper distribution of motion across the base:
 
@@ -19,6 +19,7 @@ float upper_right_speed = cos(((degree - 30) * PI / 180)) * speed + speed_w;
 ![Speed](images/Movement_diagram.png)
 
 These speed values are then passed to the SetSpeed() method of each motor, which handles the direction and PWM-based speed control:
+
 ```cpp
 void Motor::SetSpeed(float speed) {
     if (speed >= 0) { 
@@ -30,8 +31,6 @@ void Motor::SetSpeed(float speed) {
     speed = speed * kMaxPWM;
     if (speed > kMaxPWM) {
         speed = kMaxPWM;
-    } else if (speed < kMinPWM) {
-        speed = 0;
     }
     analogWrite(inPWM_, speed);
 }
