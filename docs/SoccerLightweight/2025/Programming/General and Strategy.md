@@ -14,8 +14,8 @@ Link: [GitHub Repository](https://github.com/RoBorregos/Soccer-Lightweight-2025.
 
 The main tools used to program the robot are:
 
--Visual Studio Code (IDE with the PlatformIO extension)  
--Pixymon (Software used to configure the Pixy Camera)
+- Visual Studio Code (IDE with the PlatformIO extension)  
+- Pixymon (Software used to configure the Pixy Camera)
 
 # Strategy
 
@@ -49,4 +49,39 @@ The striker follows a state machine to manage its behavior. Initially, it enters
 
 Upon gaining possession, it transitions to an attack state. It uses a camera to determine the angle to the opponent’s goal and adjusts its movement accordingly, heading straight toward the goal. To ensure a valid score, the striker is programmed to stop just before entering the goal area, using the front phototransistors to detect the boundary line and avoid crossing it entirely.
 
-## Algorithm
+## Algorithm structure
+<pre> 
+SoccerLightweight  
+│  
+├── platformio.ini            // PlatformIO Project Configuration File.                                            
+│                                Read our documentation on how we used this extension
+│
+├── lib                       // This folder includes all our libraries 
+│   ├── BNO                  
+│   ├── constants            
+│   ├── IRRing               
+│   ├── Motor                
+│   ├── Motors               
+│   ├── MUX                  
+│   ├── Photo                
+│   ├── PID                  
+│   ├── SensorControl         // Lib needed for the IR Ring's microcontroller  
+│   ├── Ultrasonic           
+│   └── Vision               
+│  
+└── src                       // Main codes uploaded to the robot's microcontroller  
+    ├── demoDefender.cpp      // Main code for the defender robot 
+    ├── demoStriker.cpp       // Main code for the attacker robot
+    ├── I2CScanner.cpp        // Checks I2C connections
+    ├── IRRing.cpp            // Code for the IR Ring microcontroller
+    ├── main.cpp             
+    ├── PhotoCalibration.cpp  // Used to find the phototransistors threshold constant
+    ├── Test_BNO_PID.cpp      // Tests BNO and PID for movement
+    ├── Test_Components.cpp   // Shows all sensor values on serial monitor
+    ├── Test_Distance.cpp     // Tests ultrasonic sensor
+    ├── Test_IR.cpp           // Tests IR Ring; prints ball angle on serial monitor 
+    ├── Test_Motors.cpp       // Verifies correct motor movement  
+    ├── Test_Photo.cpp        // Tests phototransistors and line correction    
+    └── Test_Pixy.cpp         // Tests Pixy camera  
+</pre>
+
