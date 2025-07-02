@@ -1,7 +1,7 @@
 # Robot Features
 Our robot system has been designed with several key features that improve flexibility, modularity, and precision in its operation, enabling easier adjustments and enhancements for future developments.
 
-### **1.S tandardized Speed Range**
+### **1. Standardized Speed Range**
 
 To ensure consistent control and make the system more modular, we standardized the robot’s speed by setting it within a range of 0 to 1. This approach allows for easy adjustments to the speed control algorithm and ensures compatibility across different microcontrollers, simplifying any potential hardware changes.
 
