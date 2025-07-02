@@ -3,7 +3,7 @@
 The robot’s movement system is based on a three-motor omnidirectional base, allowing it to move in any direction without needing to rotate first. This flexibility is crucial for quick responses and smooth navigation in dynamic environments, such as robotic competitions.
 
 ## Velocity Equations for an Omnidirectional Base
-![OmnidirectionalBaseEcuations](images/OmniBaseEcuations.jpeg)
+![OmnidirectionalBaseEcuations](../../../assets/SoccerLWL2025/OmniBaseEcuations.jpeg)
 
 To obtain the equations that describe the motion of an omnidirectional base, we start by analyzing the velocity components using cosine functions. In this model, the value `1` represents the maximum speed a motor can reach in the forward direction, while `-1` represents the same speed in the opposite direction.
 
@@ -123,7 +123,7 @@ double IRRing::GetAngle(float ballFollowOffsetBack, float ballFollowOffsetSide, 
 return angle;
 }
 ```
-![BallAproach](images/BallAproach.jpg)
+![BallAproach](../../../assets/SoccerLWL2025/BallAproach.jpg)
 
 ## Switch for motors
 

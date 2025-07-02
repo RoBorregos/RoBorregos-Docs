@@ -45,7 +45,7 @@ We adjust the angle using different offsets based on how far the ball is from th
     }
 ```
 This allows for a more precise approach to the ball depending on its position.
-![BallFollowOffset](images/BallFollowOffset.png)
+![BallFollowOffset](../../../assets/SoccerLWL2025/BallFollowOffset.png)
 
 During testing, we noticed that sensors sometimes gave false readings or had blind spots, which affected the robot's movements. To fix this, we added a final filter before using the ball angle value:
 

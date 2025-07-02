@@ -1,5 +1,5 @@
 # Soccer Lightweight 2025
-![Team](Soccer_team.png)
+![Team](../../assets/SoccerLWL2025/Soccer_team.png)
 
 ### Team members
 Lupita Mota - Electronics  
@@ -12,4 +12,4 @@ Our robot features a 3D-printed ABS chassis chosen for its strength-to-weight ra
  
 Our codebase is modular, organized into libraries for each component to simplify iteration and debugging. Robot movement is implemented using cosine-based functions, where direction (with 0° as the front) and a standardized speed range from 0 to 1 allow for adaptable control across different hardware setups.
 
-![Poster](poster.png)
+![Poster](../../assets/SoccerLWL2025/poster.png)

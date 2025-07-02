@@ -99,11 +99,11 @@ On VSCode, you need to chose which enviornment do you want to compile and upload
 
 Click where it says the default enviornment you are working at
 
-![Where does it says which enviornment are you working on](images/default_env_work.png)
+![Where does it says which enviornment are you working on](../../../assets/SoccerLWL2025/default_env_work.png)
 
 Thene, chose the enviornment you want. It should apear with the name you called your enviornment
 
-![Options to chose the enviornment you want to work on](images/chose_default_env.png)
+![Options to chose the enviornment you want to work on](../../../assets/SoccerLWL2025/chose_default_env.png)
 
 *** Note that there is also the option of running a command on the terminal but it didn't work when we try it. ***
 
@@ -151,7 +151,7 @@ build_src_filter = +<Test_Photo.cpp> -<main.cpp>
 
 You can find the same icons as Arduino IDE has
 
-![Compile and upload](images/CompileAndUpload.png)
+![Compile and upload](../../../assets/SoccerLWL2025/CompileAndUpload.png)
 
 
 # Important

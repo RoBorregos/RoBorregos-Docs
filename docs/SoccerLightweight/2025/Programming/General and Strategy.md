@@ -1,6 +1,6 @@
 # General
 
-![foto](images/Horchata_jamaica.jpg)
+![foto](../../../assets/SoccerLWL2025/Horchata_jamaica.jpg)
 
 We structured our codebase into modular libraries and used GitHub to support collaborative development. Each library corresponds to a specific hardware component, which improves code readability and contributes to a more maintainable and scalable system. This modular approach has also allowed us to debug efficiently and make quick adjustments when needed.
 
@@ -27,7 +27,7 @@ For the defending robot, the camera was oriented toward our own goal. It was als
 ---
 ## Horchata (Defender)🥛
 
-![Goalkeeper flowchart](images/GoalkeeperDiagram.png)
+![Goalkeeper flowchart](../../../assets/SoccerLWL2025/GoalkeeperDiagram.png)
 
 Our defending robot was programmed to operate within a defined zone on the field. This area was limited both horizontally and vertically to ensure it stayed close to the goal and maintained an effective defensive position.
 
@@ -37,11 +37,11 @@ For the horizontal boundaries, we used data from the camera. A custom function a
 
 Together, these constraints formed a kind of virtual rectangle or box within which the robot could move. Inside this area, it used its IR ring to follow the infrared signals emitted by the ball, allowing it to track and react to the game while staying in position.
 
-![Goalkeeper bounds on field](images/GoalkeeperBounds.png)
+![Goalkeeper bounds on field](../../../assets/SoccerLWL2025/GoalkeeperBounds.png)
 
 ## Jamaica (Striker)🍹
 
-![StrikerDiagram](images/StrikerDiagram.png)
+![StrikerDiagram](../../../assets/SoccerLWL2025/StrikerDiagram.png)
 
 The striker’s main objective is to locate the ball and attack. Unlike the goalkeeper, the striker does not operate within a fixed area. Instead, it constantly checks that it is not crossing the field boundaries using phototransistor plates placed underneath the robot. If a boundary line is detected, the robot adjusts its position to stay within the playing field.
 
