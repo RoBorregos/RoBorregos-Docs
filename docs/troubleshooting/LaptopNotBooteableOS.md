@@ -29,7 +29,7 @@ sudo fdisk -l                         # List disks/partitions
 sudo gdisk -l /dev/sdX                # Show GPT details
 sudo ntfsfix -d /dev/sdXN             # Repair NTFS (read-only)
 ```
-If this doesn't work or doesn't show the partitions, move to the next step .
+If this doesn't work or doesn't show the partitions, move to the next step.
 
 ### 3. Restore Partition Table
 First, in Linux install gdisk:
@@ -59,3 +59,41 @@ These commands may help, but in this case, they did not resolve the issue.
 powercfg /h off                       # Disable hibernation
 chkdsk X: /r                          # Repair errors (X: = drive letter)
 ```
+
+### 5. Repair BCD in UEFI Systems (Hiren’s Boot PE)
+If the BIOS does not detect the SSD as bootable and tools like EasyBCD show "Would you like to manually load a BCD?", you must manually rebuild the EFI bootloader.
+
+#### Steps to Fix BCD (UEFI + GPT Disks)
+1. Open CMD as Administrator in Hiren's Boot PE.
+2. Launch `diskpart` and list volumes:
+    ```cmd
+    diskpart
+    list vol
+    ```
+3. Identify:
+    - The Windows partition (e.g., C: – contains C:\Windows, Users, etc.)
+    - The EFI partition (usually 100–500 MB, FAT32, may not have a drive letter)
+4. If the EFI partition lacks a drive letter, assign one (e.g., S:):
+    ```cmd
+    select volume X        # Replace X with EFI volume number
+    assign letter=S
+    exit
+    ```
+    If the EFI partition does not exist, open Disk Management and check if any partition matches the previous requirements (100–500 MB, FAT32).
+
+5. Use `bcdboot` to rebuild the boot files:
+    ```cmd
+    bcdboot C:\Windows /s S: /f UEFI # Where S: its the partition of 500 MB
+    ```
+6. Verify that `S:\EFI\Microsoft\Boot\BCD` now exists.
+7. Reboot the system. Enter BIOS/UEFI and you can ensure:
+    - UEFI mode is enabled
+    - Secure Boot is disabled
+    - The SSD now appears in the boot order
+
+This last step doesnt need to be realize it should work after rebooting 
+
+> ⚠️ **DO NOT** use `bootrec /fixmbr` or `/fixboot` on GPT systems!  
+> These commands are for Legacy BIOS + MBR setups and may damage your GPT-based bootloader.
+
+If you have further inquiries, please refer to Hector.
