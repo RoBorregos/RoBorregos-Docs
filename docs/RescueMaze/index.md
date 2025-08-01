@@ -4,4 +4,4 @@ Simulation of a disaster area where the robot has to navigate through the majori
 
 ## Competition
 
-See the [rules](https://junior.robocup.org/wp-content/uploads/2023/01/RCJRescueMaze2023RulesFinal.pdf) for Rescue Maze 2023.
+See the [rules](https://junior.robocup.org/wp-content/uploads/2025/01/RCJRescueMaze2025-draft-1.pdf) for Rescue Maze 2023.
