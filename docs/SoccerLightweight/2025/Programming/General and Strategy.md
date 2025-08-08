@@ -85,3 +85,9 @@ SoccerLightweight
     └── Test_Pixy.cpp         // Tests Pixy camera  
 </pre>
 
+## For future developement
+
+To have a cleaner `main.cpp` code, we recommend adding a robot.cpp library in which you create all the necessary objects and have a unique `init()` method and an `update()` method for all required updates and initializations. This will help reduce the number of lines in the main code and improve its readability.
+
+**For the goalkeeper**  
+We recommend exploring different strategies.

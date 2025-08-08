@@ -79,3 +79,6 @@ float PixyCam::getGoalAngle(int x){
 ```
 
 This gave us an angle value representing which way the center of the goal was with respect to the front of the robot. We multiplied this by -1 to adjust the direction of the angle according to our convention. In addition, we applied a moving average to smooth the value and prevent the robot from reacting unsteadily if the detection was not as accurate.
+
+## For future development
+We recommend developing a simpler code to test how the robot reacts to the information obtained from the camera methods before integrating it into the main functions.
