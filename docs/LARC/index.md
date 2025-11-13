@@ -1,35 +1,36 @@
-# Latin American Robotics Competition Open Challenge
+# LARC Open 2025 — Coffee Harvester Robot (Robot Recolector de Café)
 
-The competition context is aimed at automating an environment with a large number of packages
-to be organized, Figure 1. The essence of the competition is extracted from environments such
-as warehouse, product distribution center, store stock, etc.
+This page summarizes the LARC Open 2025 proposal "Robot Recolector de Café". The project
+focuses on an autonomous ground robot that locates, picks and delivers coffee fruits/items in a
+competition arena. The goal is a reliable, fast, and robust system that performs repeated
+collection tasks with minimal human intervention.
 
-Warehouses automation is already a reality in large companies like Amazon and Alibaba, but it
-should be a reality in midsize companies soon. Think of a possible solution. Participants must
-build an agile and fast robot to organize as many packages as possible in a limited time.
+**Objectives**
+- Design an autonomous robot to detect and pick coffee items from the field and place them in
+  a designated deposit zone.
+- Operate without manual control during a timed run; the robot may start with an unknown
+  initial pose and must handle variable item placements.
+- Prioritize reliability: avoid damaging the environment, handle missed picks gracefully,
+  and maximize the number of successfully delivered items.
+This page contains a short summary and links to the official rules and technical details.
 
-![image](https://github.com/RoBorregos/RoBorregos-Docs/assets/117100165/26c51e5c-5eba-4a80-ac3d-0598fa39a195)
+**More about this challenge**
+- Context: LARC Open tasks require teams to design robots that work reliably in semi-structured
+  environments. This specific challenge simulates the task of harvesting/collecting coffee
+  items and transporting them to a deposit area within a limited time window.
+- Focus areas: perception (detecting ripe items), navigation (safe traversal and obstacle
+  avoidance), manipulation (reliable pick-and-place), and system integration (real-time control
+  and recovery strategies).
 
-## The goal
-
-The robot can move freely in the scenario but cannot collide or push a package out of the
-package's area. To reach the challenges of the competition, the robot must take each package
-and leave it to its destination. The robot will not know his initial position in the scenario either the
-position of the packs in the package's area. The objective is to take packages from a specific
-location and take them to predefined locations, so that, at the end, the packages are in a desired
-arrangement in the proposed scenario. The specific objectives are:
-  1. Take colored packages (yellow, red, green, blue) and move them to the unloading regions
-  with equivalent colors.
-  2. Pick up packages containing 2D codes and move them to any respective position on the
-  shelves.
-  3. Pick up packages with alphabetical values and take them to any respective position on
-  the shelves.
-
-## Packages
-
-Packages can be marked by color, 2D codes or alphabetical values. The possible colors for the
-packages are green, yellow, blue and red. The 2D code is a bi-dimensional representation
-containing 9 combinations, from one to 9, according to the markers that can be obtained from the
-site https://chev.me/arucogen. The alphabetical packages are white and the 2D code packages
-are black. There is a specific region in the scenario where the packages are initially positioned,
-called the loading region.
+**Rules & Scoring (summary)**
+- Official rules and full scoring details are in the event document: 
+  https://static1.squarespace.com/static/68811cea22a48812262c6b93/t/689f9555ec63660c6cde75c9/1755288917300/LARC-OPEN-2025-Robot-Recolector-de-Cafe-Ver-1.0.pdf
+- Summary of important constraints:
+  - Timed runs: each match is time-limited. Score is based on items correctly collected and
+    deposited within the time limit.
+  - No external human control during the run.
+  - Collisions or pushing items out of the allowed area may incur penalties or disqualification
+    depending on severity (see official rules for precise penalties).
+  - Items must be fully placed inside the robot to count as collected.
+- For precise scoring (points per item type, bonuses, tie-break rules, and penalties) consult
+  the linked PDF; this page only provides a concise summary and pointers.
