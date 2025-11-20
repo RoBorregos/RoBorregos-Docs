@@ -1,4 +1,4 @@
-# Electronics Documentation – LARC Robot
+# Electronics Documentation – LARC Robot 2024
 
 ## Introduction
 
@@ -46,3 +46,58 @@ The final result in Electronics matters can be seen in this picture:
 
 ## Modifications
 
+---------------------------------------------------------------------------------------------------------------
+# Electronics Documentation – LARC Robot 2025 International
+
+## Introduction
+The electronic subsystem of the autonomous coffee harvesting robot uses a dual-processor architecture to balance high-speed perception with precise and deterministic motor control. A Teensy 4.1 handles all low-level tasks, including sensor reading, DC motor regulation, servo actuation, and stepper control. Meanwhile, an NVIDIA Jetson is responsible for high-level operations such as coffee-cherry detection, image processing, and navigation decision-making.
+This separation prevents heavy computation from interfering with real-time motor performance.
+
+## Connections 
+All sensors, motors, and drivers are connected directly to the Teensy 4.1, while the Jetson communicates through serial protocols for command exchange. To ensure stability and prevent noise-related failures, the system uses two fully independent power circuits.
+
+Two 12V battery packs were implemented:
+
+**Battery 1 – Logic Power (12V)**
+Feeds the Teensy and all low-voltage peripherals using mini voltage regulators that output 5V and 3.3V.
+
+-5V powers devices such as the Jetson interface.
+-3.3V supplies sensors and other peripherals.
+
+**Battery 2 – Motor Power (12V)**
+-Dedicated exclusively to high-power loads:
+DC motors, stepper motor with TMC2208, and the servo power rail.
+This isolation prevents brownouts, voltage dips, and resets on the logic side.
+
+**XT60 connectors** were used for both batteries to ensure secure, polarity-safe connections during operation.
+
+Two LED indicators were also added to monitor power status:
+
+-One for the logic system (Teensy, sensors, Jetson interface)
+-One for the motors and drivers
+
+## Prototype Development
+Before integrating the complete system, each subsystem was tested independently using an Arduino Uno. Line sensors were evaluated under different lighting, ultrasonic sensors were verified at multiple distances, and the BNO055 IMU was calibrated for reliable orientation readings.
+All actuators were tested individually:
+
+-DC motors with encoders (speed, direction, encoder feedback)
+
+-12V elevator motor (smooth vertical motion)
+
+-NEMA 17 stepper with TMC2208 (step accuracy, current limiting, noise reduction via capacitor)
+
+-Servos (pre-programmed intake movements)
+
+## PCB Develpment
+A custom **two-layer PCB** was created using EasyEda to consolidate all electronics into a single integrated platform. The schematic was organized into logical subsystems, and every Teensy pin assignment was verified to prevent wiring errors.
+
+Trace widths were assigned based on signal type:
+
+-0.3 mm for low-current logic traces
+
+-Wider traces (1-2.5 mm)for motor lines, rated up to 2.5 A
+
+Routing minimized electrical noise and crosstalk by keeping power and signal lines separated.
+DXF files were used to precisely align the PCB with the robot’s mechanical structure, ensuring compatibility with JST connectors and color-coded cables.
+
+The silkscreen includes clear labels and DXF-based icons for fast debugging and assembly under competition conditions.
