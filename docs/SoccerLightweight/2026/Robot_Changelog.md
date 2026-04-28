@@ -5,7 +5,7 @@ Several improvement were made from the previous version.
 - Usage of **Teensy 4.1** _(previous gen: Arduino Mega Pro & ESP32)_
 - Weight increment to 1.350 kg _(previous gen: 0.900 kg)_
 - Usage of BNO085 _(previous gen: BNO055)_
-- Usage of TSSP4038 receivers _(previous gen: TSSP58038)_
+- Usage of TSOP4038 receivers _(previous gen: TSSP58038)_
 - Usage for red ultrabright LEDs for striker _(previous gen: white ultrabright LED)_
 - Added 3 extra IR receivers
 - Added kicker to defender
