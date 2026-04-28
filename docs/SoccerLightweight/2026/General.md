@@ -6,6 +6,7 @@ Eduardo Mateo Murillo - Electronics
 Luis Alfonzo Ramírez - Mechanics  
 Andrés Rodríguez Cantú - Programming  
 Aaron Flores - Programming  
+Rodrigo Bahena Sánchez - Project Manager
 
 ### Abstract
 Our two robots, **Colibri** and a **Ajolote** autonomously detect an IR-emitting ball, track goals by colour, navigate within field boundaries, and coordinate offensive and defensive roles without any human intervention. The electronics are built around a Teensy 4.1 main controller connected to five custom PCBs, an omnidirectional three-motor drive base, a 14-receiver IR ring for ball tracking, and a Pixy 2.1 camera for goal detection. The codebase is fully modular, using a cosine-based motion library and cascaded moving-average filters for stable sensor readings
