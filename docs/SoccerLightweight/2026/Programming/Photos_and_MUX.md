@@ -1,0 +1,11 @@
+## Phototransistor and MUX library
+
+To be able to play legally by the rules of RCJ soccer the robot may not leave the lines of the field or cross the penalty lines which prompts a 30 second lack of progress, precious time lost that makes it very hard to win.
+
+Phototransistors are electronic devices that react to how much light goes into it at any point in time, it communicates this to a microcontroller by sending voltage signals going higher if there is more light, naturally we use this to our advantage as the white lines reflect more light than the green field.
+To achieve this we designed a system based on arrays of phototransistors on lower PCBs which communicate each individual value via a multiplexer that controls which channel sends data using this we get extremely precise values for each phototransistor.
+We use this data and individual channel tresholds to know when we hit line, to avoid having to calibrate every single time on different lightning and color surfaces we used a delta method which simplifies line detection we set maximum delta to filter out electric noise and only say we are on line when the delta (difference between current and last reading) crosses that treshold, treshold we have founnd to be very consistent in different lightning and color as even if the light is higher or the color is lighter the change between white and green will almost always be the same.
+Phototransistor PCBs are some of the most complicated pieces of hardware of our robot equipped with leds to make lightning detection possible the resistors and voltage they get is extremely important as very low resistance makes leds be brighter but creates an important problem we found, the phototransistors take longer to filter out higher values when they detect line making it harder to ve precise and reliable.
+We also tested different LED colors, White and Red, red proved to show a much lower noise rate on the values keeping them closer and extremely consistent while white was more erratic and jumped to higher deltass inconsistently.
+White also had the advantage that white LEDs can use higher resistance which helps the phototransistors to drown out voltage spikes faster when detecting line.
+We ended up using a mix of both due to component limitations but they are still reliable and consistent when the hardware is done correctly.
