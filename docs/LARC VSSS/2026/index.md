@@ -7,3 +7,4 @@
 [Ronaldo Castillo](https://github.com/RonnieC06) (Programming; Strategy; Electronics)
 [Fernando Carmona](https://github.com/ferrc897) (Programming; Control)
 [Angela Rosales](https://github.com/angelarosales) (Mechanics)
+[Tania Pech](https://github.com/taniapech) (Project Management)
