@@ -8,15 +8,19 @@
 
 The main developments during 2026 with respect to previous years are the following:
 - Blue tiles award 30 points on the first arrival, but reduce by 10 points on each subsequent visit
+- Colored victims have been replaced by cognitive targets
+- Victims award a maximum 30 points, increased from 20
+- The pathway between two opposite walls has been changed to 28 cm + 10% variation
+- Reduced the maximum amount of kits down to 8 rescue kits
 - The rubrics include a video
-- For all the changes, see: [Maze-2025-Rules](https://junior.robocup.org/wp-content/uploads/2025/01/RCJRescueMaze2025-draft-1.pdf)  
+- For all the changes, see: [Maze-2026-Rules](https://junior.robocup.org/wp-content/uploads/2026/02/RCJRescueMaze2026-final.pdf)  
 
 ## Mechanics
 
-- [OverallCAD](Overrall CAD.md)
-- [Suspension](Suspension.md)
-- [Wheels](Wheels.md)
-- [Dispenser](Dispenser.md)
+- [OverallCAD](Mechanics/Overrall-CAD.md)
+- [Suspension](Mechanics/Suspension.md)
+- [Wheels](Mechanics/Wheels.md)
+- [Dispenser](Mechanics/Dispenser.md)
 
 ## Electronics
 
@@ -26,8 +30,8 @@ The main developments during 2026 with respect to previous years are the followi
 ## Programming
 
 - [Control](Control/)
-- [Algorithm](Algorithm.md)
-- [Vision](Vision.md)
+- [Algorithm](Algorithm/)
+- [Vision](Vision/)
 
 ## Code Structure
 
