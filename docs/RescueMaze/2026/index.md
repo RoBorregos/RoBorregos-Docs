@@ -13,10 +13,10 @@ The main developments during 2026 with respect to previous years are the followi
 
 ## Mechanics
 
-- [OverallCAD](Overrall CAD/)
-- [Suspension](Suspension/)
-- [Wheels](Wheels/)
-- [Dispenser](Dispenser/)
+- [OverallCAD](Overrall CAD.md)
+- [Suspension](Suspension.md)
+- [Wheels](Wheels.md)
+- [Dispenser](Dispenser.md)
 
 ## Electronics
 
