@@ -1,10 +1,10 @@
 # @RescueMaze - 2026
 
 ## Members
-- [Programming](Marco Alejandro Galindo de la Cruz [Vision & Algorithm])
-- [Programming](Santiago Ramirez Cepeda [Control])
-- [Electronics](Rebeca Gomez Morales)
-- [Mechanics](Salette Catalina Morales Prieto)
+- Programming: Marco Alejandro Galindo de la Cruz [Vision & Algorithm]
+- Programming: Santiago Ramirez Cepeda [Control]
+- Electronics: Rebeca Gomez Morales
+- Mechanics: Salette Catalina Morales Prieto
 
 The main developments during 2026 with respect to previous years are the following:
 - Blue tiles award 30 points on first arrival though reduce 10 points per new visit
