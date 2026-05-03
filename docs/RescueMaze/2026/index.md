@@ -21,7 +21,7 @@ The main developments during 2026 with respect to previous years are the followi
 ## Electronics
 
 - [PCB](PCB/)
-- [Raspberry Pi 5](Jetson Nano/RunningJetson/)
+- Raspberry Pi 5
 
 ## Programming
 
