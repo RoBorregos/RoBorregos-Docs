@@ -1,2 +1,13 @@
 site/
 __pycache__/
+
+# JetBrains
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+.history/
