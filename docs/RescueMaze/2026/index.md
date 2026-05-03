@@ -7,7 +7,7 @@
 - Mechanics: Salette Catalina Morales Prieto
 
 The main developments during 2026 with respect to previous years are the following:
-- Blue tiles award 30 points on first arrival though reduce 10 points per new visit
+- Blue tiles award 30 points on the first arrival, but reduce by 10 points on each subsequent visit
 - The rubrics include a video
 - For all the changes, see: [Maze-2025-Rules](https://junior.robocup.org/wp-content/uploads/2025/01/RCJRescueMaze2025-draft-1.pdf)  
 
