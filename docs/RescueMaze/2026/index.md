@@ -26,8 +26,8 @@ The main developments during 2026 with respect to previous years are the followi
 ## Programming
 
 - [Control](Control/)
-- [Algorithm](Algorithm/)
-- [Vision](Vision/)
+- [Algorithm](Algorithm.md)
+- [Vision](Vision.md)
 
 ## Code Structure
 
