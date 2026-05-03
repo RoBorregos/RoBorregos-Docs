@@ -32,4 +32,4 @@ The main developments during 2026 with respect to previous years are the followi
 ## Code Structure
 
 The following diagram shows the code structure:
-![Architecture]()
+![Architecture](/assets/maze/Architecture.png)
