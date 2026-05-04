@@ -11,3 +11,7 @@ __pycache__/
 .vscode/
 *.code-workspace
 .history/
+
+# System files
+.DS_Store
+Thumbs.db
