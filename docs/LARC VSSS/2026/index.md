@@ -1,9 +1,6 @@
 # LARC VSSS 2026
 Welcome to the documentation for the RoBorregos team’s VSSS competition. This section is intended to guide you through the development and implementation of a multi-agent system.
 
-## About the competition
-IEEE Very Small Size Soccer is a competition in which two teams of three robots, each measuring up to 7.5 × 7.5 × 7.5 cm, play a soccer match. The robots are remotely controlled by a computer, but without human intervention. The computer processes the image from a video camera positioned above the field and commands the robots.
-
 ## Project Objective
 The RoBorregos team’s goal in this competition is to develop a reinforcement learning model for a multi-agent system capable of playing soccer at scale.
 To that end, we present different sections of the project, including:
