@@ -46,7 +46,7 @@ The vision system follows a modular sequential pipeline
 ## Execution
 ### Modifying parameters
 The file [`vsss_ws/src/vsss_bringup/launch/vision.launch.py`](https://github.com/RoBorregos/larc-vsss-2026/blob/main/vsss_ws/src/vsss_bringup/launch/vision.launch.py)
-contains execution parameters such as:
+contains execution parameters such as:  
 * **use_camera** (boolean): If this flag is set to true, the program will use the camera to obtain images  
 * **simulator** (boolean): If this flag is set to true, the programm will wait for the `vision/sim_image` topic to
   receive images  
