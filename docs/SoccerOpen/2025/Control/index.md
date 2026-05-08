@@ -9,7 +9,7 @@ To realize the control of our robot we rely on the advances of the 2024 team. So
 
 ## Kinematic
 
-All of the Kinematic methods specifications can be found in the previous team documentation following this [link](\SoccerOpen\2024\Control\index.md)
+All of the Kinematic methods specifications can be found in the previous team documentation following this [link](../../2024/Control/index.md)
 
 For this year, we had to develop a new form of control to adapt to our logic and use of vision. For that, the first thing we realized was a method able to normalize our IMU sensor angle so that our robot moves in a range of [-180,180], which also facilitates the correction path between the current_yaw and the setpoint.
 
