@@ -418,22 +418,6 @@ print(port.read(6).hex())  # Should read ~6 byte response
 EOF
 ```
 
-### Model Inference Profiling
-```bash
-# Time individual frames
-python3 << 'EOF'
-import time
-from detector import VisionDetector
-
-detector = VisionDetector()
-for i in range(10):
-    start = time.time()
-    victim_id = detector.detect_victim(camera_id=0)
-    elapsed = time.time() - start
-    print(f"Frame {i}: {elapsed*1000:.1f}ms - {victim_id}")
-detector.close()
-EOF
-```
 
 ### Vision Logs (via `print()` statements)
 
@@ -497,26 +481,7 @@ model.export(format='onnx')
 2. **Enable model quantization:** Convert best.pt to INT8 (25% faster)
 3. **Use model pruning:** Reduce YOLO model depth (yolov8n = nano, vs yolov8s = small)
 
-### Thermal Management
-```bash
-# Check CPU temperature
-vcgencmd measure_temp
 
-# Boost performance (if cooling available)
-echo powersave | sudo tee /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-# Or: performance (but runs hot)
-```
-
-### Memory Usage
-```bash
-# Check available RAM
-free -h
-
-# Lighten payload if RAM-constrained
-# Option 1: Single camera at a time (halve memory)
-# Option 2: Lower inference resolution (imgsz=416)
-# Option 3: Enable GPU acceleration if available (Compute Module 4 with GPU)
-```
 # Main problems
 
 | Problem | Cause | Solution |
