@@ -22,13 +22,13 @@ The Vision subsystem runs on a **Raspberry Pi 5** with dual **IMX219 CSI cameras
 
 ### Packet Structure
 
-```text
-Byte 0:   0xFF              (Header start)
-Byte 1:   0xAA              (Header end)
-Byte 2:   payload_len       (Length of payload, max 32)
-Byte 3:   payload[0..n-1]   (Actual payload)
-Byte n:   checksum          (XOR of bytes 2 through n-1)
-```
+| Byte | Value | Description |
+|------|-------|-------------|
+| 0 | 0xFF | Header start |
+| 1 | 0xAA | Header end |
+| 2 | payload_len | Length of payload, max 32 |
+| 3 | payload[0..n-1] | Actual payload |
+| n | checksum | XOR of bytes 2 through n-1 |
 
 ### Detection Request (ESP32 - Raspberry Pi)
 ESP32 sends a detection request with:
@@ -36,8 +36,11 @@ ESP32 sends a detection request with:
 - **Camera ID:** `0x00` (RIGHT) or `0x01` (LEFT)
 
 **Example packet:** `FF AA 02 01 00 03`
-- Payload: `[0x01, 0x00]` (command=request, camera=RIGHT)
-- Checksum: `0x02 ^ 0x01 ^ 0x00 = 0x03`
+
+| Field | Value | Meaning |
+|-------|-------|----------|
+| Payload | [0x01, 0x00] | command=request, camera=RIGHT |
+| Checksum | 0x03 | 0x02 ^ 0x01 ^ 0x00 = 0x03 |
 
 ### Detection Response (Raspberry Pi - ESP32)
 Raspberry Pi responds with detected victim type:
@@ -58,8 +61,11 @@ Raspberry Pi responds with detected victim type:
 | 0x07 | VICTIM_FAKE_TARGET | Bullseye without victim |
 
 **Example response:** `FF AA 03 02 00 01 02`
-- Payload: `[0x02, 0x00, 0x01]` (response, camera=RIGHT, victim=PHI/harmed)
-- Checksum: `0x03 ^ 0x02 ^ 0x00 ^ 0x01 = 0x02`
+
+| Field | Value | Meaning |
+|-------|-------|----------|
+| Payload | [0x02, 0x00, 0x01] | response, camera=RIGHT, victim=PHI/harmed |
+| Checksum | 0x02 | 0x03 ^ 0x02 ^ 0x00 ^ 0x01 = 0x02 |
 
 ---
 
@@ -77,14 +83,21 @@ sudo apt install -y libopenjp2-7 libtiff6 libjasper1 libharfbuzz-dev
 ```
 
 ### 2. Serial Port Configuration
-```bash
-# Enable UART on GPIO pins 14/15
-sudo raspi-config
-# - Interface Options - Serial Port
-# - Login shell over serial? - No
-# - Serial port hardware? - Yes
-# - Enable UART hardware
 
+Enable UART on GPIO pins 14/15 with these steps:
+
+| Step | Command/Action | Details |
+|------|---|---|
+| 1 | `sudo raspi-config` | Open configuration tool |
+| 2 | Interface Options | Navigate to Interface Options |
+| 3 | Serial Port | Select Serial Port |
+| 4 | Login shell over serial? | Choose No |
+| 5 | Serial port hardware? | Choose Yes |
+| 6 | Enable UART hardware | Confirm |
+
+Verify and test:
+
+```bash
 # Verify port is available
 ls -la /dev/serial0
 # Should output: /dev/serial0 -> ttyAMA0
@@ -423,25 +436,34 @@ EOF
 ```
 
 ### Vision Logs (via `print()` statements)
-- `[RX] FF AA 02 01 00 03` — Received detection request from ESP32
-- `[REQ] len=2 payload=[1, 0]` — Parsed request (cmd=1, cam=0)
-- `[SENT] CAM=RIGHT VICTIM=PHI` — Detected victim, sending response
-- `[TX] FF AA 03 02 00 01 02` — Sent response packet
+
+| Log Message | Meaning |
+|---|---|
+| `[RX] FF AA 02 01 00 03` | Received detection request from ESP32 |
+| `[REQ] len=2 payload=[1, 0]` | Parsed request (cmd=1, cam=0) |
+| `[SENT] CAM=RIGHT VICTIM=PHI` | Detected victim, sending response |
+| `[TX] FF AA 03 02 00 01 02` | Sent response packet |
 
 ---
 
 ## Dataset & Model Training Notes
 
 ### Training Data
-- **Source:** RoboCup Rescue Maze 2024-2025 arena captures
-- **Labels:** Victim markers (red/green/yellow) + bullseye targets
-- **Image count:** ~2000 labeled frames (per camera calibration)
-- **Augmentation:** Brightness ±10%, rotation ±5°, blur, noise
+
+| Aspect | Details |
+|---|---|
+| Source | RoboCup Rescue Maze 2024-2025 arena captures |
+| Labels | Victim markers (red/green/yellow) + bullseye targets |
+| Image count | ~2000 labeled frames (per camera calibration) |
+| Augmentation | Brightness ±10%, rotation ±5°, blur, noise |
 
 ### Model Files
-- **`best.pt`** — Latest trained YOLOv8 model (PyTorch format, ~22MB)
-- **`best_maze_model.pt`** — Alternative maze-specific model
-- **`best.onnx`** — ONNX export (for potential TensorFlow Lite deployment)
+
+| File | Description |
+|---|---|
+| `best.pt` | Latest trained YOLOv8 model (PyTorch format, ~22MB) |
+| `best_maze_model.pt` | Alternative maze-specific model |
+| `best.onnx` | ONNX export (for potential TensorFlow Lite deployment) |
 
 ### Retraining
 ```bash
@@ -515,12 +537,14 @@ free -h
 
 ## Summary
 
-- **Architecture:** Dual IMX219 CSI cameras - Picamera2 capture - YOLO inference (YOLOv8) - UART response to ESP32
-- **Protocol:** 6-byte binary packets (0xFF 0xAA header, XOR checksum, 115200 baud)
-- **Performance:** ~150-200ms inference per frame, 5-7 FPS, <300ms timeout per request
-- **Tuning:** Constants.py for thresholds, per-camera color gains, and model parameters
-- **Integration:** ESP32 calls `raspy.getDetection()` - sends UART request - receives victim ID - updates maze map
-- **Deployment:** Systemd service for persistent operation, SSH debugging via journalctl logs
+| Aspect | Details |
+|---|---|
+| Architecture | Dual IMX219 CSI cameras - Picamera2 capture - YOLO inference (YOLOv8) - UART response to ESP32 |
+| Protocol | 6-byte binary packets (0xFF 0xAA header, XOR checksum, 115200 baud) |
+| Performance | ~150-200ms inference per frame, 5-7 FPS, <300ms timeout per request |
+| Tuning | Constants.py for thresholds, per-camera color gains, and model parameters |
+| Integration | ESP32 calls `raspy.getDetection()` - sends UART request - receives victim ID - updates maze map |
+| Deployment | Systemd service for persistent operation, SSH debugging via journalctl logs |
 
 **Next Steps**
 1. Retrain best.pt on updated arena camera angles & lighting conditions
