@@ -38,12 +38,18 @@ Meetings are held once a week with all team members, mentors, and the PM, with a
 Despite rigorous scheduling and task tracking, certain challenges arose that required a strategic shift. During these periods, it became necessary to restructure task management, prioritizing core robot functionalities. This approach ensures that essential competition requirements take precedence over non-critical secondary features.
 
 **Current Season Priorities:**
-* Basic Movement.
-* Computer Vision.
-* Phototransistors and Line Detection.
-* Kicker mechanism.
-* Goalie and Striker strategies.
-* Dribbler and maneuvering control.
+
+- Basic Movement.
+
+- Computer Vision.
+
+- Phototransistors and Line Detection.
+
+- Kicker mechanism.
+
+- Goalie and Striker strategies.
+
+- Dribbler and maneuvering control.
 
 Furthermore, an iterative workflow is recommended across all departments. This means that while mechanical and electronic modifications are underway, programming should ideally undergo continuous testing to ensure comprehensive system integration.
 
@@ -60,8 +66,10 @@ It is essential for the PM and mentors to maintain a close relationship with tea
 
 ### Area-Specific Weekly Check-ins
 In addition to general meetings, specialized mentoring sessions for each area should be established, particularly during critical development phases:
-* **January - March:** Focused support for Electronics and Mechanics.
-* **March - April:** Focused support for Programming.
+
+- **January - March:** Focused support for Electronics and Mechanics.
+
+- **March - April:** Focused support for Programming.
 
 ### Promoting Transparency and Documentation
 Utilizing platforms like Notion, team members, mentors, and PMs must uphold total transparency by documenting weekly progress. Emphasis should be placed on updating progress status, blockers, dependencies, and task owners, ensuring that assigned tasks remain achievable and aligned with the collective goal.
