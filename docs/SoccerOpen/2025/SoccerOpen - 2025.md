@@ -1,10 +1,12 @@
 
 # Robocup Soccer Open 2025
 
+- [📟 Electronics](Electronics/index.md)
 - [📁 Robot Communication](Communication/index.md)
 - [🎮 Robot Control](Control/index.md)
 - [🤖 Algorithm Design](Logic/index.md)
 - [📸 Robot Vision](Vision/index.md)
+
 
 ### Electronics
 
