@@ -26,4 +26,11 @@ Additionally, due to the low ground clearance, the robot experienced difficultie
 
 One of the secondary objectives of the shell was to partially cover the light emitted by LEDs and phototransistors in order to reduce potential visual interference during operation.
 
-> **Note:** This aspect was not considered critical within the Soccer IR category, since multiple teams used red LEDs without presenting significant issues during competition.
+<iframe 
+  src="https://tec-andres.github.io/tagsBonitos/alert-frame.html?tag=note&text=This aspect was not considered critical within the Soccer IR category, since multiple teams used red LEDs without presenting significant issues during competition." 
+  width="100%" 
+  height="135" 
+  style="border: none;" 
+  scrolling="no"
+  frameborder="0">
+</iframe>

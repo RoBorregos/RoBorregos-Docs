@@ -6,4 +6,11 @@ It was experimentally observed that positioning the battery away from the center
 
 Battery access is achieved through a removable structural section that can be disassembled and reassembled using screws and nuts.
 
-> **Note:** No comparative experimental tests were performed using multiple battery locations to quantitatively evaluate the effect on the center of mass.
+<iframe 
+  src="https://tec-andres.github.io/tagsBonitos/alert-frame.html?tag=note&text=No comparative experimental tests were performed using multiple battery locations to quantitatively evaluate the effect on the center of mass." 
+  width="100%" 
+  height="135" 
+  style="border: none;" 
+  scrolling="no"
+  frameborder="0">
+</iframe>
