@@ -98,10 +98,10 @@ To minimize the number of analog pins used on the Teensy, each board includes a 
 
 The front-facing board operates similarly but includes seven phototransistors and seven IR LEDs instead of eight, to reduce physical size.
 
-![Electronic schematic of the general line detector board](/docs/assets/soccer/Electronics/General_line_detection_board.jpg)
+![Electronic schematic of the general line detector board](\assets\soccer\Electronics\General_line_detection_board.jpg)
 *Electronic schematic of the general line detector board*
 
-![Electronic schematic of the front line detector board](/docs/assets/soccer/Electronics/Front_line_detection_board.jpg)
+![Electronic schematic of the front line detector board](\assets\soccer\Electronics\Front_line_detection_board.jpg)
 Electronic schematic of the front line detector board
 
 ### 3.2 Main Board (4 Layers)
@@ -123,7 +123,7 @@ The main PCB was also designed in-house using EasyEDA, and it features a 4-layer
 
 All peripheral devices are connected using 2, 3, or 4-pin JST connectors, and the motor drivers (H-bridges) are also modular, connected via female headers. This modularity improves maintainability and debugging efficiency.
 
-![Main board electronic schematic with Teensy 4.1 integration](/docs/assets/soccer/Electronics/Main_board_electronic.jpg)
+![Main board electronic schematic with Teensy 4.1 integration](\assets\soccer\Electronics\Main_board_electronic.jpg)
 *Main board electronic schematic with Teensy 4.1 integration*
 
 ### 3.3 Kicker Module Board
@@ -131,7 +131,7 @@ All peripheral devices are connected using 2, 3, or 4-pin JST connectors, and th
 The kicker board is powered by a separate 3.3V input from a dedicated 1-cell LiPo battery. It includes an XL6019E1 step-up converter, which boosts the voltage to 48V using inductors and capacitors. This high voltage is stored in two parallel 4700 µF capacitors, ready to discharge through the solenoid.
 To safely interface with the Teensy, the activation circuit employs CYPC817(C-TP2) optocouplers. When the Teensy sends a control signal, the optocouplers switch and allow the stored 48V to flow through the solenoid. This isolation protects the microcontroller from direct contact with high-voltage circuits.
 
-![Electronic schematic of the kicker module](/docs/assets/soccer/Electronics/Kicker_module.jpg)
+![Electronic schematic of the kicker module](\assets\soccer\Electronics\Kicker_module.jpg)
 *Electronic schematic of the kicker module*
 
 ### 3.4 Design Considerations

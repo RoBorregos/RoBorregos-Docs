@@ -53,7 +53,7 @@ Secondly, to detect the blobs for our three objects we created methods that capt
 
 Visualize how the camera detects the object in the field by encapsulating each in a different color for identification.
 
-![Detecting ball and goals using mirror](/docs/assets/soccer/Programming/OpenMV_vision.jpg)
+![Detecting ball and goals using mirror](\assets\soccer\Programming\OpenMV_vision.jpg)
 
 For the angles and distances calculation, based on last year's team, we also decided to approximate the calculations using a coordinate system. taking into account that we set our center in the middle of the robot and mirror, we can calculate the distance and angles relative to the robot using trigonometry. Basically, we calculate the relative distances for the center of the object in the x and y axis. With this information we can calculate the relative distances in pixels, calculating the hypotenuse, and the angle using the `atan2()` function in micropython. 
 
