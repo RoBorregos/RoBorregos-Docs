@@ -2,11 +2,11 @@
 
 We only used Teensy 4.1 as a microcontroller, so we took advantage of the UART Ports for serial communication. Our pipeline for the Striker Flor follows this structure:
 
-![Pipeline for Striker Flor communication](/docs/assets/soccer/Programming/OpenMV_Teensy_diagram.png)
+![Pipeline for Striker Flor communication](\assets\soccer\Programming\OpenMV_Teensy_diagram.png)
 
 Since the Goalkeeper Capullo only contained one OpenMV H7, the pipeline simplifies to the following structure:
 
-![Pipeline for Goalkeeper Flow communication](/docs/assets/soccer/Programming/OpenMV_single_Teensy.png)
+![Pipeline for Goalkeeper Flow communication](\assets\soccer\Programming\OpenMV_single_Teensy.png)
 
 Observe that the OpenMV H7 (mirror) sends a data package containing the following variables to Teensy 4.1
 
