@@ -1,5 +1,3 @@
-# mechanics/general_construction.md
-
 # General Construction
 
 The robot structure was designed prioritizing mechanical resistance and proper mass distribution. The black structural components were manufactured using **ABS**, while the white secondary components were manufactured using **PLA**.
