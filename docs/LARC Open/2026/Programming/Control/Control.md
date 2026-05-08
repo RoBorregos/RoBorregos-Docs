@@ -1,4 +1,4 @@
-# Control
+# Control Documentation - LARC Robot 2026
 
 ## Ximena Patricia García
 
