@@ -38,3 +38,5 @@ It is recommended to migrate to the TEPT5700 phototransistor, which offers great
 
 ![PhotoPCB](../../../assets/SVI2026/photopcb.jpeg)
 
+## Resources
+In this [Google Drive link](https://drive.google.com/drive/folders/1iLI8nZqHYHWCFtoLrhFHCsU3mt8n4tq5?usp=sharing) you can access all the step files where the PCBs were modeled.
