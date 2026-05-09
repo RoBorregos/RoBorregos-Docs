@@ -1,4 +1,4 @@
-# IR Ball follow
+# Ball follow
 
 This note documents the current Colibri/PIDLookForBall IR chase logic and the tuning knobs that matter most on the field.
 
