@@ -123,5 +123,5 @@ Please visit our [repository](https://github.com/RoBorregos/Soccer-Vision-2026) 
 ## Areas
 
 - [Control](Control.md)
-- [Vision](Vision.md)
+- [Vision](vision.md)
 - [PID](PID.md)
