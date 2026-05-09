@@ -2,10 +2,11 @@
 Team Members:
 
 
-- Jasiel Aldana - Electronics
-- Jared Aldana - Programmer
-- Arturo Cabrera - Programmer
 - Jeremy Martino - Mechanics
+- Jared Aldana - Programmer
+- Jasiel Aldana - Electronics
+- Arturo Cabrera - Programmer
+
 
 ![Team_photo](../../assets/SVI2026/team_members.png)
 
