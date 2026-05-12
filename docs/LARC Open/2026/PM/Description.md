@@ -2,7 +2,7 @@
 
 Hector Tovar served as the Project Manager for the LARC Open 2026 preparation cycle (January – April 2026, TMR).
 
-The timeline Gantt chart for the TMR preparation cycle is available at [TImeline TMR 2026.png](../../../assets/LARC/TImeline%20TMR%202026.png).
+The timeline Gantt chart for the TMR preparation cycle is available at [TImeline TMR 2026.png](../../../assets/LARC/Timeline_20TMR_202026.png).
 
 ---
 
@@ -51,7 +51,7 @@ The **Demo Day was held on Saturday, February 7**. The requirement for that demo
 
 | Period | Activity |
 |---|---|
-| Week 1 | **Regional Competition** |
+| Week 1 | **Regional Competition** — the team **did not win**. Two critical systems failed: (1) the IR sensors produced unreliable readings, which broke the state machine since the entire autonomous flow depended on IR-detected states; (2) the vision system was inconsistent and could not be trusted for the full run. Post-regional, the IR channel was switched from analog to digital to enable cleaner readings and manual calibration rather than relying on code-side compensation. |
 | Post-regional | Vision and communication subsystems were consistently failing; the team decided to refactor both for a more stable architecture |
 | Post-regional | Started prototyping a new final PCB — this turned out to be a mistake (see retrospective) |
 | Semana Santa (Holy Week) | New PCB arrived but did not work; the week was used instead to **solder and reorganize the 2025 PCB**, applying improvements to make it competition-ready |
@@ -94,6 +94,8 @@ The **Demo Day was held on Saturday, February 7**. The requirement for that demo
 - **The new PCB was a late and risky bet.** Deciding to design and order a completely new PCB after Regional, with TMR weeks away, left no margin for iteration. When the board arrived non-functional during Semana Santa, the team had no time to debug it and had to fall back to the old board. The right call would have been to improve the 2025 PCB incrementally from the start rather than replacing it entirely under time pressure.
 
 - **No documentation was maintained during the project.** Decisions, design rationale, and subsystem changes were never written down as they happened. This makes knowledge transfer to future teams harder and means institutional memory lives only in team members' heads.
+
+- **The IR sensor was the most critical failure at Regional.** Because the state machine was almost entirely dependent on IR-detected states, unreliable readings cascaded into the entire autonomous flow breaking down. The root issue was using the analog channel, which made calibration fragile and code-dependent. Switching to the digital channel post-regional allowed for manual threshold calibration and produced more stable, repeatable results — but this change should have been made and validated before the competition.
 
 - **Vision and communication failures at Regional were a foreseeable risk.** These subsystems showed instability before Regional but were not treated as a blocker. A more proactive risk policy would have flagged them earlier and allocated recovery time before the competition rather than after.
 
