@@ -1,6 +1,6 @@
 # Sensor Overview
 
-The following sensors were used in Rescue Maze 2024:
+The following sensors were used in Rescue Maze 2026:
 
 - Time of flight distance sensor: [VLX53L0X](./VLX53L0X.md) (Adafruit)
 - RGB Color Sensor: [TCS34725](./TCS34725.md) (Adafruit)
@@ -13,7 +13,7 @@ protocol that allows multiple devices to be connected to the same bus. The advan
 devices only need two wires to communicate (SDA and SCL, in addition to GND and VCC). The disadvantage is
 that each device needs a unique address to be able to communicate with the master device (in this case, the Arduino).
 
-However, since many devices of the same type are used (in the case of Rescue Maze, 4 VLX53L0X distance sensors),
+However, since many devices of the same type are used (in the case of Rescue Maze, 5 VLX53L0X distance sensors),
 then a multiplexor is needed to avoid address conflicts. The multiplexor connects to the i2c bus and allows the 
 master device to select which device it wants to communicate with. The devices with the same address should be 
 connected to different multiplexor channels.
