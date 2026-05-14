@@ -192,8 +192,6 @@ If it failed, it can be for multiple reasons:
 2.- If you have a timeout error, this signifies that either your connections are incorrect (RX is connected with RX, or TX is connected with TX) or that the FTDI is fried. Remember that TX goes connected with RX, and RX goes connected with TX.  
 3.- If you are in the uploading process, arduino attempts to upload it, but constantly fails to the point that it starts making attempts. It means that either you bridge to connect the 5V and VIN malfunctioned, or you accidentally have it connected to the Teensy RX and TX ports, or the jumpers to which you are uploading your code are malfunctioning, or the FTDI is fried.
 
-
-
 ## Issues and planned improvements
 The IR ring worked well for the 2025 IR ball, however, experimentally we were able to show that the IR ring will not behave the same with the smaller 2026 IR ball. The issues we were able to detect include: the ball gets lost more easily, the ball is more susceptible to noise, the IR intensity is different; calibration is a requirement, and the ball weights less; making it more sensible to sudden movements. Even though a lot of the possible improvements are mechanical, software changes are needed in order to be able to work with the new ball.
 
