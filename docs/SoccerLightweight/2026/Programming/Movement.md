@@ -4,15 +4,17 @@ The robot’s movement system is based on a three-motor omnidirectional base, al
 ## Velocity Equations for an Omnidirectional Base
 ![OmnidirectionalBaseEcuations](../../../assets/SoccerLWL2025/OmniBaseEcuations.jpeg)
 
-To obtain the equations that describe the motion of an omnidirectional base, we start by analyzing the velocity components using cosine functions. In this model, the value `1` represents the maximum speed a motor can reach in the forward direction, while `-1` represents the same speed in the opposite direction.
+The equations that describe the movement of an omnidirectional base rely themselves on trigonometry and the specific configuration of the motors. Each motor contributes to the overall movement of the robot in a way that can be mathematically modeled using cosine functions.
 
-Our motors are placed with an angular separation of 120°, located at 60°, 180°, and 300° with respect to the center of the base. Since the wheels are mounted perpendicular to the axis of each motor, the resulting direction of motion for each wheel (when the motor spins positively) is:
+Each and every single motor have a $\Delta\phi$ of $120^{\circ}$; located each at $60^{\circ}$, $180^{\circ}$, and $300^{\circ}$ respectively from where the robot is facing forward. Since the wheels are mounted perpendicular to the axis of each motor, we need to add $90^{\circ}$ to each of these angles to get the direction in which each motor contributes to the movement of the robot. Granting us the following angles for each motor:
 
-- **Motor m1**: 150°  
-- **Motor m2**: 270°  
-- **Motor m3**: 30°
+- **Motor m1**: $150^{\circ}$  
+- **Motor m2**: $270^{\circ}$  
+- **Motor m3**: $30^{\circ}$
 
-To calculate the speed of each motor depending on the desired direction of movement of the robot, we use the following general expression:
+Before we explain how we calculate the speed at which a motor moves, it is important to introduce the concept of torque and how it relates to the velocity of the robot. We are able to communicate to the drivers to set a certain speed by using PWM. However, this is not what's actually occuring on the physical level. The motors have a certain torque curve, which means that they will only start moving at a certain minimum PWM value. If we neglect this fact, it can lead to scenarios where we command the robot to move, but since it's unable to move at that PWM value, it will remain at rest. 
+
+With that in mind, in order to calculate the speed of each motor, we need to take into account the direction at which we want the robot to move. We can represent this with the following general expression:
 
 $$P_i = v\cos(\theta - \phi_i)$$
 
@@ -22,17 +24,15 @@ Where:
 - $\phi_i$ is the direction in which each motor contributes movement (Value we need to find),
 - $v$ is the normalized speed of motor, with values between `-1` and `1`.
 
-So, the final speed equations for each motor, based on the desired movement direction $\phi$, are:
+In the end, we end up with the following model for the speed of each motor based on the desired movement direction $\theta$:
 
-$P_1 = v\cos(\theta - 150)$
-$P_2 = v\cos(\theta - 270)$
-$P_3 = v\cos(\theta - 30)$
+$P_1 = v\cos(\theta - 150^{\circ})$  
+$P_2 = v\cos(\theta - 270^{\circ})$  
+$P_3 = v\cos(\theta - 30^{\circ})$  
 
-These equations tell us how fast each motor should spin to move the robot in a specific direction.
+These equations are now able to give us the speed of each motor based on where we want the robot to move. For example, if we want the robot to move forward, we would set $\theta$ to $0^{\circ}$. If we want the robot to move to the right, we would set $\theta$ to $90^{\circ}$. By adjusting $\theta$, we can command the robot to move in any direction.
 
-Finally, these normalized values can be multiplied by the linear speed we want for the robot, We used parameters from 0 to 1 to have a standarized code and manage the values of speed in terms of percentage. We can also add an angular speed component, calculated using a PID controller.
-
-To compute each motor’s speed, we use the following method:
+In code, to compute each motor’s speed, we use the following method:
 
 ```cpp
 void Motors::move(float angleDegrees, float speedPercent, float rotationalSpeed) {
@@ -40,13 +40,13 @@ void Motors::move(float angleDegrees, float speedPercent, float rotationalSpeed)
     float lower_center_speed = cos((angleDegrees - 270) * PI / 180.0f) * speedPercent + rotationalSpeed;
     float upper_right_speed = cos((angleDegrees - 30) * PI / 180.0f) * speedPercent + rotationalSpeed;
 
-    left.setSpeed(-upper_left_speed);
+    left.setSpeed(upper_left_speed);
     center.setSpeed(lower_center_speed);
     right.setSpeed(upper_right_speed);
 }
 ```
 
-These speed values are then passed to the `SetSpeed()` method of each motor, which handles the direction and PWM-based speed control:
+`SetSpeed()` is the method that takes care of each individual motor object; moving the motor to a desired speed and the direction (forward or backwards) to a desired speed.
 
 ```cpp
 void Motor::setSpeed(float speed) {
