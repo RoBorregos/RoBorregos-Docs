@@ -17,7 +17,15 @@ The main reasons observed for this improvement were:
 
 Because of this, the final design positioned the IR ring as low as mechanically possible without compromising mobility or structural stability.
 
-> **Note:** Experimental testing showed that lowering the IR ring improved tracking accuracy more effectively than applying additional software filtering methods.
+
+<iframe 
+  src="https://tec-andres.github.io/tagsBonitos/alert-frame.html?tag=note&text=Experimental testing showed that lowering the IR ring improved tracking accuracy more effectively than applying additional software filtering methods." 
+  width="100%" 
+  height="115" 
+  style="border: none;" 
+  scrolling="no"
+  frameborder="0">
+</iframe>
 
 One of the principal development challenges was the incorrect mapping of several IR sensors around the ring. This issue originated primarily from communication inconsistencies between the mechanical and electronics development areas.
 
@@ -38,7 +46,14 @@ This problem caused:
 
 The issue was later corrected through iterative calibration and remapping procedures, highlighting the importance of synchronization between mechanical design, electronics integration, and software implementation.
 
-> **Warning:** Small mismatches between physical sensor placement and software indexing can produce large angular estimation errors even when the sensors themselves operate correctly.
+<iframe 
+  src="https://tec-andres.github.io/tagsBonitos/alert-frame.html?tag=warning&text=Small mismatches between physical sensor placement and software indexing can produce large angular estimation errors even when the sensors themselves operate correctly." 
+  width="100%" 
+  height="115" 
+  style="border: none;" 
+  scrolling="no"
+  frameborder="0">
+</iframe>
 
 In the final physical implementation, an Arduino board was mounted on the upper section of the robot near the IR ring assembly.
 
