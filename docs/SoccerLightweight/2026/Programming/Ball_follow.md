@@ -1,10 +1,10 @@
 # Ball follow
 
-This note documents the current Colibri/PIDLookForBall IR chase logic and the tuning knobs that matter most on the field.
+This note documents the current Striker/PIDLookForBall IR chase logic and the tuning knobs that matter most on the field.
 
 ## Heading settle band
 
-kHeadingSettleBandDeg is passed into the heading PD controller as the angle band where the robot is considered close enough to the target yaw. In PIDLookForBall.cpp it is currently 5.5f; in Colibri.cpp it is tuned separately at 6.0f.
+kHeadingSettleBandDeg is passed into the heading PD controller as the angle band where the robot is considered close enough to the target yaw. In PIDLookForBall.cpp it is currently 5.5f; in Striker.cpp it is tuned separately at 6.0f.
 
 This value is small, but powerful. A tighter band makes the robot fight harder to keep the startup heading while it drives toward the ball. That can improve straight-line attacks, but it can also add twitching because the robot is already changing drive direction quickly from the IR angle. A wider band makes the robot calmer and lets the chase vector dominate, but too much width might allow visible yaw drift.
 
@@ -32,7 +32,7 @@ DriveHelpers::wrapAngle180(180.0f - incomingAngle)
 
 The 180.0f - incomingAngle conversion maps the IR sensor coordinate frame into the drivetrain coordinate frame. The wrap then prevents rear-boundary jumps from becoming false large turns.
 
-Colibri.cpp assumes the Teensy-facing IR processor is already sending a clean signed ball angle per line. Keeping the IR ring calculation off the main Colibri loop is a major speed advantage: Colibri can spend its loop time on serial intake, heading hold, line avoidance, and motor output instead of recomputing sensor geometry. That lowers latency from sensor update to motor command, which is exactly what ball following needs.
+Striker.cpp assumes the Teensy-facing IR processor is already sending a clean signed ball angle per line. Keeping the IR ring calculation off the main Striker loop is a major speed advantage: Striker can spend its loop time on serial intake, heading hold, line avoidance, and motor output instead of recomputing sensor geometry. That lowers latency from sensor update to motor command, which is exactly what ball following needs.
 
 ## Behind-ball orbit
 
@@ -49,15 +49,15 @@ return DriveHelpers::wrapAngle180(ballAngle - orbitDirection * orbitAdjustment);
 
 ```
 
-When fabsf(ballAngle) > 90, the ball is in the rear half. Driving directly at that angle can make the robot back into the ball or push from the wrong side. This helper bends the drive angle sideways so Colibri orbits around the ball and approaches from a better attack position.
+When fabsf(ballAngle) > 90, the ball is in the rear half. Driving directly at that angle can make the robot back into the ball or push from the wrong side. This helper bends the drive angle sideways so Striker orbits around the ball and approaches from a better attack position.
 
 kBehindBallOrbitAdjustGain controls how quickly the orbit correction grows as the ball moves deeper behind the robot. kBehindBallOrbitAdjustMaxDeg caps the correction so the robot still moves toward the ball instead of circling forever.
 
 These constants are high-leverage tuning. A good pair makes the robot look dramatically faster because it avoids bad backward contacts and spends less time recovering. Too little adjustment looks sluggish and direct. Too much adjustment makes the robot over-orbit and miss the shortest path back to the ball.
 
-## Colibri state machine
+## Striker state machine
 
-Colibri currently has two states:
+Striker currently has two states:
 
 - CHASE_BALL: read the latest IR angle, optionally bend the chase angle for behind-ball orbiting, map it to the drivetrain frame, and drive while holding startup yaw.
 - AVOIDING_LINE: when the photo library reports a field line, remember the escape angle and drive away for Constants::kAvoidDurationMs, then return to CHASE_BALL.
@@ -81,4 +81,4 @@ The important helpers are:
 - DriveHelpers::wrapAngle180: shared angle normalization.
 - DriveHelpers::clampSymmetric: limits steering/orbit corrections without changing sign.
 
-Line detection, per-side photo readings, side baselines, and field-line escape angles are owned by lib/Photos. Colibri should call those library functions instead of duplicating sensor-side logic locally.
+Line detection, per-side photo readings, side baselines, and field-line escape angles are owned by lib/Photos. Striker should call those library functions instead of duplicating sensor-side logic locally.
