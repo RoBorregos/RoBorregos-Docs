@@ -1,11 +1,64 @@
-## Phototransistor and MUX library
+## Phototransistor and MUX Library
 
-To be able to play legally by the rules of RCJ soccer the robot may not leave the lines of the field or cross the penalty lines which prompts a 30 second lack of progress, precious time lost that makes it very hard to win.
+The phototransistor system is used to detect the white field lines so the robot can avoid leaving the field or crossing penalty lines. This is especially important because a line mistake can cause a lack of progress penalty and gives the opponent time to recover.
 
-Phototransistors are electronic devices that react to how much light goes into it at any point in time, it communicates this to a microcontroller by sending voltage signals going higher if there is more light, naturally we use this to our advantage as the white lines reflect more light than the green field.
-To achieve this we designed a system based on arrays of phototransistors on lower PCBs which communicate each individual value via a multiplexer that controls which channel sends data using this we get extremely precise values for each phototransistor.
-We use this data and individual channel tresholds to know when we hit line, to avoid having to calibrate every single time on different lightning and color surfaces we used a delta method which simplifies line detection we set maximum delta to filter out electric noise and only say we are on line when the delta (difference between current and last reading) crosses that treshold, treshold we have founnd to be very consistent in different lightning and color as even if the light is higher or the color is lighter the change between white and green will almost always be the same.
-Phototransistor PCBs are some of the most complicated pieces of hardware of our robot equipped with leds to make lightning detection possible the resistors and voltage they get is extremely important as very low resistance makes leds be brighter but creates an important problem we found, the phototransistors take longer to filter out higher values when they detect line making it harder to ve precise and reliable.
-We also tested different LED colors, White and Red, red proved to show a much lower noise rate on the values keeping them closer and extremely consistent while white was more erratic and jumped to higher deltass inconsistently.
-White also had the advantage that white LEDs can use higher resistance which helps the phototransistors to drown out voltage spikes faster when detecting line.
-We ended up using a mix of both due to component limitations but they are still reliable and consistent when the hardware is done correctly.
+Each side of the robot has an array of phototransistors on the lower PCBs. Because there are several sensors and only a limited number of analog inputs, we use multiplexers to select which phototransistor channel is being read at each moment.
+
+## Main Improvement
+
+The biggest improvement was removing the need for fixed absolute thresholds.
+
+Before this change, we had to manually tune constant threshold values every time the robot was tested in a different place. Lighting conditions, floor color, shadows, and LED intensity could all change the raw analog values, so a threshold that worked in one environment could fail in another.
+
+Now, when the robot starts, it immediately samples the floor while it is on green. These values become the green baseline for each phototransistor channel. During the match, the robot compares the current value against that baseline.
+
+Instead of asking "is this reading greater than a fixed line value?", the code asks:
+
+```cpp
+current_reading > green_baseline + line_margin
+```
+
+This means the robot detects a white line when the reading increases by more than the hardcoded margin over the green baseline.
+
+## Why the Baseline Method Works
+
+The useful observation is that, even when the absolute lighting changes, the difference between green floor and white line is usually very similar. The raw value for green may be higher or lower depending on the room, but the jump from green to white stays consistent enough to detect with the same margin.
+
+This lets us keep a precise hardcoded margin while avoiding manual calibration every time the robot boots in a new place. The robot calibrates itself to the current green floor value, then uses the same increase margin to detect white.
+
+## Code Behavior
+
+At startup, the robot captures several samples from the phototransistors while it is on green floor. These samples are used to calculate the baseline values.
+
+During play, each channel is read through the multiplexer. If any enabled channel rises above its baseline by more than the configured margin, the robot considers that side to be detecting a line.
+
+This made the line detection much more practical because we no longer needed to constantly replace threshold constants before tests. The code could immediately adapt to the current floor conditions and detect changes as soon as the robot reached a line.
+
+## Resistor and Noise Problems
+
+The code worked well for detecting value changes, but the hardware made the readings noisier than expected.
+
+The resistors on the phototransistor PCBs affected how quickly the circuit filtered voltage after detecting reflected light. Some resistor choices made the signal slow to return to the green baseline after the sensor saw a white line. This created noise and delayed recovery, which made the phototransistors less reliable than expected.
+
+LED intensity also affected the readings. Brighter LEDs made the line easier to see, but they could also make the phototransistor signal harder to filter cleanly. Because of this, resistor values and LED behavior need to be tested together, not separately.
+
+## Planned Auto-Recalibration
+
+We also planned to add automatic recalibration during the match.
+
+The idea was to recapture the green baseline every few seconds whenever the robot had not detected a line recently. For example, if the robot spends five seconds only seeing green, it can safely assume that the current floor readings are valid green values and update the baseline.
+
+This would help compensate for slow lighting changes, battery effects, and sensor drift while keeping the same hardcoded margin for detecting the jump from green to white.
+
+## Recommendations
+
+Avoid spending match preparation time manually tuning raw threshold values. Automations like baseline capture make the robot faster to deploy and let the team focus on higher-impact work such as control, ball following, and strategy.
+
+For future versions, we should:
+
+- Keep the baseline-plus-margin method instead of returning to fixed absolute thresholds.
+- Test resistor values on a breadboard before soldering the PCBs.
+- Verify how quickly each phototransistor returns to its green baseline after seeing a white line.
+- Tune the hardcoded line margin using the difference between green and white, not the raw green value.
+- Implement periodic green recalibration only when no line has been detected for several seconds.
+- Use debug prints to inspect baseline, current reading, and delta for each channel during testing.
