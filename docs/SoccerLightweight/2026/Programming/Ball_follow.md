@@ -1,42 +1,55 @@
-# Ball follow
+# Ball Follow
 
-This note documents the current Striker/PIDLookForBall IR chase logic and the tuning knobs that matter most on the field.
+Ball follow is the striker behavior that converts the IR ball angle into robot movement. The IR ring tells us where the ball is relative to the robot, and the striker uses that angle to decide how to move while still keeping its body orientation stable with the BNO and heading PD controller.
 
-## Heading settle band
+This behavior is important because driving directly toward the ball is not always the best play. If the ball is in front of the robot, we can chase it directly. If the ball is behind the robot, driving straight backward can push the ball in the wrong direction or make the robot lose time recovering. For that reason, we added orbiting logic so the striker can move around the ball and approach it from a better angle.
 
-kHeadingSettleBandDeg is passed into the heading PD controller as the angle band where the robot is considered close enough to the target yaw. In PIDLookForBall.cpp it is currently 5.5f; in Striker.cpp it is tuned separately at 6.0f.
+## Main Concepts
 
-This value is small, but powerful. A tighter band makes the robot fight harder to keep the startup heading while it drives toward the ball. That can improve straight-line attacks, but it can also add twitching because the robot is already changing drive direction quickly from the IR angle. A wider band makes the robot calmer and lets the chase vector dominate, but too much width might allow visible yaw drift.
+The ball-follow code works with three important angles:
 
-Tune this with kHeadingKp, kHeadingKd, kMaxTurnPwm, and kMinTurnPwm, not in isolation. The best value is the smallest band that does not cause steering chatter during fast ball-angle changes.
+- `rawTheta`: the latest ball angle received from the IR processor.
+- `ballAngle`: the cleaned angle we use for chase decisions.
+- `driveAngle`: the final movement angle sent to `robot.motors.move()`.
 
-## Angle wrapping
+The robot also tracks its yaw using the BNO. Yaw is the direction the robot body is facing. While the drivetrain moves toward the ball, the heading PD controller keeps the robot from rotating away from its desired orientation.
 
-`DriveHelpers::wrapAngle180(angleDegrees)` normalizes any angle into [-180, 180].
+## Reading the Ball Angle
 
-That matters because the rear of the robot is the discontinuity. For example, 181 degrees and -179 degrees are almost the same physical direction, but without wrapping they look 360 degrees apart to control logic. Wrapping keeps the robot from making a huge correction when the ball crosses the rear angle boundary.
+The striker receives the IR angle through `Serial3`. The IR processor sends a signed ball angle, so the main striker loop does not need to recalculate all IR sensor geometry. This keeps `Striker.cpp` focused on fast decisions: reading serial data, checking line sensors, holding heading, and updating motors.
 
-## UART IR packet handling
+The latest accepted ball angle is stored with `acceptBallAngle()`. This updates:
 
-PIDLookForBall.cpp supports three packet forms from the IR processor:
+- `currentBallAngle`
+- `latestRawBallTheta`
+- `latestBallAngle`
+- `lastBallReadMs`
 
-- a <angle>: accepted ball angle packet.
-- r <...>: rejected packet, ignored by the chase loop.
-- <angle>: bare numeric angle for older/simple IR sketches.
+We also added angle-jump filtering. If a new angle changes too suddenly, using `kBallAngleJumpIgnoreDeg`, the code does not accept it immediately. If a similar jump repeats within `kBallAngleRepeatToleranceDeg`, then we accept it. This helps ignore one-frame IR noise without blocking a real fast ball movement.
 
-Accepted angles are converted with:
+## Angle Wrapping
+
+`DriveHelpers::wrapAngle180(angleDegrees)` keeps angles inside the `-180` to `180` degree range.
+
+This matters because the rear of the robot is a discontinuity. For example, `181` degrees and `-179` degrees are almost the same physical direction, but without wrapping they look like a `360` degree jump. Wrapping prevents the robot from making a huge correction when the ball crosses behind it.
+
+## Mapping to the Drivetrain
+
+The IR angle and the drivetrain angle are not the same frame of reference. The UART ball angle uses `0` as the front of the robot and `+/-180` as the back. The drivetrain response is mirrored front-to-back, so we map the ball angle with:
 
 ```cpp
-DriveHelpers::wrapAngle180(180.0f - incomingAngle)
+DriveHelpers::wrapAngle180(180.0f - robotAngle)
 ```
 
-The 180.0f - incomingAngle conversion maps the IR sensor coordinate frame into the drivetrain coordinate frame. The wrap then prevents rear-boundary jumps from becoming false large turns.
+This conversion happens in `mapRobotBallAngleToDriveAngle()`.
 
-Striker.cpp assumes the Teensy-facing IR processor is already sending a clean signed ball angle per line. Keeping the IR ring calculation off the main Striker loop is a major speed advantage: Striker can spend its loop time on serial intake, heading hold, line avoidance, and motor output instead of recomputing sensor geometry. That lowers latency from sensor update to motor command, which is exactly what ball following needs.
+## Behind-Ball Orbit
 
-## Behind-ball orbit
+The biggest improvement in ball follow was adding orbit behavior when the ball is behind the robot.
 
-getBehindBallOrbitAngle(float ballAngle) is the key helper that makes the chase smarter when the ball is behind the robot:
+Before this, the striker could drive directly at the rear ball angle. That often made the robot back into the ball or contact it from a bad side. Instead of improving the attack, the robot could push the ball away from the goal or spend time recovering.
+
+Now, when `fabsf(chaseAngle) > 90.0f`, the code treats the ball as being in the rear half and calls `getBehindBallOrbitAngle()`.
 
 ```cpp
 const float orbitDirection = (ballAngle >= 0.0f) ? 1.0f : -1.0f;
@@ -46,39 +59,91 @@ const float orbitAdjustment = DriveHelpers::clampSymmetric(
     kBehindBallOrbitAdjustMaxDeg
 );
 return DriveHelpers::wrapAngle180(ballAngle - orbitDirection * orbitAdjustment);
-
 ```
 
-When fabsf(ballAngle) > 90, the ball is in the rear half. Driving directly at that angle can make the robot back into the ball or push from the wrong side. This helper bends the drive angle sideways so Striker orbits around the ball and approaches from a better attack position.
+`orbitDirection` tells the robot which side the ball is on. If `ballAngle` is positive, the ball is on one side of the robot, so the correction is applied in that direction. If `ballAngle` is negative, the correction is mirrored to the other side.
 
-kBehindBallOrbitAdjustGain controls how quickly the orbit correction grows as the ball moves deeper behind the robot. kBehindBallOrbitAdjustMaxDeg caps the correction so the robot still moves toward the ball instead of circling forever.
+`rearHalfErrorDeg` measures how far into the rear half the ball is. A ball at `90` degrees is exactly on the side of the robot, so the rear error is `0`. A ball at `150` degrees is much deeper behind the robot, so the rear error is larger.
 
-These constants are high-leverage tuning. A good pair makes the robot look dramatically faster because it avoids bad backward contacts and spends less time recovering. Too little adjustment looks sluggish and direct. Too much adjustment makes the robot over-orbit and miss the shortest path back to the ball.
+`orbitAdjustment` multiplies that rear-half error by `kBehindBallOrbitAdjustGain`. This means the deeper the ball is behind the robot, the more the striker bends its movement sideways instead of driving straight backward.
 
-## Striker state machine
+`DriveHelpers::clampSymmetric()` limits that correction using `kBehindBallOrbitAdjustMaxDeg`. This is important because without a maximum limit, the robot could bend the movement angle too much and stop making useful progress toward the ball.
 
-Striker currently has two states:
+Finally, the function subtracts the correction from `ballAngle` and wraps the result back into the `-180` to `180` degree range. The result is a new chase angle that makes the striker arc around the ball instead of backing directly into it.
 
-- CHASE_BALL: read the latest IR angle, optionally bend the chase angle for behind-ball orbiting, map it to the drivetrain frame, and drive while holding startup yaw.
-- AVOIDING_LINE: when the photo library reports a field line, remember the escape angle and drive away for Constants::kAvoidDurationMs, then return to CHASE_BALL.
+## Orbit Tuning
 
-The state machine keeps line avoidance from fighting ball chase. Once a line is detected, line escape owns the motors for a short, predictable time. After that, the robot returns to the IR ball chase path.
+The orbit behavior depends mainly on two constants:
 
-## Feature booleans and helpers
+- `kBehindBallOrbitAdjustGain`: controls how quickly the robot starts arcing around the ball.
+- `kBehindBallOrbitAdjustMaxDeg`: limits the maximum orbit correction.
 
-The main behavior switches are:
+If `kBehindBallOrbitAdjustGain` is too low, the robot still behaves too directly and may hit the ball from behind. If it is too high, the striker can circle too much, overshoot the approach, and never actually touch the ball because it keeps orbiting around it instead of closing distance.
 
-- kEnableDebugPrints: enables compact serial status output.
-- kEnablePixy: controls whether Pixy initialization runs.
-- kEnableLineAvoidance: enables the photo-library line detection and escape state.
+If `kBehindBallOrbitAdjustMaxDeg` is too low, the orbit correction is barely noticeable. If it is too high, the striker can take a longer path than needed and miss the shortest route back to the ball.
 
-The important helpers are:
+## Chase Speed
 
-- mapRobotBallAngleToDriveAngle: converts the robot-relative ball angle into the current drivetrain frame.
-- getBehindBallOrbitAngle: bends rear-half ball angles into an orbiting approach.
-- acceptBallAngle: commits a validated IR angle and updates freshness timing.
-- retakeGreenBaseline: refreshes photo baselines after line events.
-- DriveHelpers::wrapAngle180: shared angle normalization.
-- DriveHelpers::clampSymmetric: limits steering/orbit corrections without changing sign.
+We use different speeds depending on the situation:
 
-Line detection, per-side photo readings, side baselines, and field-line escape angles are owned by lib/Photos. Striker should call those library functions instead of duplicating sensor-side logic locally.
+- `kChaseDrivePwm`: normal ball chase speed.
+- `kBehindBallDrivePwm`: speed used when orbiting behind the ball.
+- `kAvoidDrivePwm`: speed used while escaping a line.
+
+The behind-ball speed can be higher because the robot is intentionally trying to reposition quickly around the ball. This should still be tuned carefully so the phototransistors have enough time to detect lines.
+
+## Heading Control
+
+The heading PD controller keeps the robot facing the startup yaw while it moves. This lets the striker translate toward the ball without freely spinning.
+
+The most important heading constants are:
+
+- `kHeadingKp`
+- `kHeadingKd`
+- `kMaxTurnPwm`
+- `kMinTurnPwm`
+- `kHeadingSettleBandDeg`
+
+`kHeadingSettleBandDeg` defines how close the robot must be to the target yaw before the controller stops correcting. A smaller value holds direction more aggressively, but it can make the robot twitch. A larger value makes the robot calmer, but it can allow more yaw drift.
+
+## Line Avoidance Priority
+
+Ball follow does not control the robot all the time. Line avoidance has priority.
+
+If `phototransistor_sensors.CheckPhotosOnField()` detects a line, the striker enters `AVOIDING_LINE`. In this state, the robot stores the escape angle, drives away using `kAvoidDrivePwm`, and ignores ball chase until `Constants::kAvoidDurationMs` has passed.
+
+This prevents ball chase and line escape from fighting over the motors.
+
+## Current State Machine
+
+The striker currently uses two main states:
+
+- `CHASE_BALL`: read the latest IR angle, optionally orbit if the ball is behind, map the angle to the drivetrain frame, and move while holding yaw.
+- `AVOIDING_LINE`: temporarily drive away from a detected line, then return to `CHASE_BALL`.
+
+The normal loop is:
+
+1. Read the newest ball angle from `Serial3`.
+2. Read current yaw from the BNO.
+3. Calculate the heading correction with the PD controller.
+4. Check whether line avoidance should take over.
+5. If no line is detected, decide whether the ball is behind the robot.
+6. If the ball is behind, bend the chase angle with `getBehindBallOrbitAngle()`.
+7. Convert the robot-relative ball angle into a drivetrain angle.
+8. Send `driveAngle`, drive PWM, and turn correction to `robot.motors.move()`.
+
+## Debugging
+
+When `kEnableDebugPrints` is enabled, the code prints useful values such as:
+
+- current state
+- yaw
+- raw ball angle
+- chase angle
+- drive angle
+- turn command
+- active line side
+- whether the ball is in front
+- whether we currently have a ball reading
+
+These debug values are useful when tuning orbiting because they show whether the issue is coming from the IR angle, the orbit correction, the drivetrain mapping, or the heading controller.
