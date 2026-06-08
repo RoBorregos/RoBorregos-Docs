@@ -72,13 +72,11 @@ These subtle errors significantly reduced the robot’s performance in competiti
 Technically, the development completed prior to the competition was nearly finished. Lower-priority implementations or unfeasible solutions were excluded from the TMR. 
 
 Missing development:
-- Robust line detection system using phototransistors (Critic)
+- Robust line detection system using phototransistors (Critical)
 - Ball dribbler (Nice-to-have)
 - Automatic calibration system (Limitations in component capacity/OpenMV)
 
 The team aimed to win the TMR. However, due to the unforeseen circumstances mentioned above, the team lost a match that would have secured a spot in the final and ultimately finished in fifth place based on points in the standings. 
-
-Translated with DeepL.com (free version)
 
 
 ### Importance of Team Unity
