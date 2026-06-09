@@ -48,8 +48,8 @@ division-by-zero errors in the derivative calculation.
 **External reset** — A `resetIntegral()` method allows other parts of the code to clear
 the integrator at known points, such as the start of a new movement.
 
-Impementation of PID:
-[here](https://github.com/RoBorregos/robocup-rescuemaze-2026/blob/TMR-final/src/PID.cpp)
+Implementation of PID:
+[here](https://github.com/RoBorregos/robocup-rescuemaze-2026/blob/0876579c641d9e13ed051b2c455dda5d23a1b078/src/PID.cpp)
 
 ## PID Orientation
 

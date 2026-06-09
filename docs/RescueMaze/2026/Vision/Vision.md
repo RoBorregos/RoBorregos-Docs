@@ -495,19 +495,6 @@ model.export(format='onnx')
 
 ---
 
-## Main problems
-
-| Problem | Cause | Solution |
-|---|---|---|
-| Camera color mismatch | BGR/RGB conversion and different lighting between cameras | Tune `vision_picamera_color_order` and per-camera gain values |
-| False victim detections | Low confidence threshold or noisy frames | Increase `vision_conf_threshold` and adjust YOLO tuning parameters |
-| High inference latency | Running YOLO on Raspberry Pi CPU | Reduce `vision_imgsz`, use a lighter model, or improve thermal conditions |
-| Serial communication issues | UART misconfiguration or disconnected wiring | Verify `/dev/serial0`, baud rate, and GPIO 14/15 connections |
-| Different behavior between cameras | Uneven exposure and lens response | Apply separate right/left calibration values in `Constants.py` |
-| Service startup failures | Missing Python packages or environment mismatch | Check the virtual environment and reinstall the required dependencies |
-
----
-
 ## Troubleshooting
 
 | Issue | Diagnosis | Solution |
