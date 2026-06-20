@@ -1,5 +1,5 @@
 # Robot Changelog
-Several improvement were made from the previous version. 
+Several improvements were made from the previous version. 
 
 ## Hardwarewise
 - Usage of **Teensy 4.1** _(previous gen: Arduino Mega Pro & ESP32)_
@@ -13,12 +13,12 @@ Several improvement were made from the previous version.
 
 ## Drafted hardware changes
 - Added dribbler to striker. Removed due to phototransistor space conflict
-- Attempted to replace all LEDs. Removed due to unsufficient material
+- Attempted to replace all LEDs. Removed due to insufficient material
 
 ## Softwarewise
 - Completely new implementation of `Photos` and `MUX` libraries. The method to detect line was formalized, and it can now compare between each and every one photoresistor rather than doing an average.
 - Partial refactoring of `sensorControl` (formerly named: `sensor_control`) to include 15 IR receivers. Modified angle retrieval method, it now uses vector components with SMA to act as the kernel in order to get the final angle.
-- Completely new implementation of `PID`, constructor now allows to set a minimum and maximum PWM with a deadband in order to prevent for the motors to get less PWM that what they need in order to move.
+- Completely new implementation of `PID`, constructor now allows to set a minimum and maximum PWM with a deadband in order to prevent the motors from getting less PWM than what they need in order to move.
 - Added a robot class in order to initialize all sensors on a single environemnt, not needing to worry for proper library imports in tests.
 - Changed BNO library in order to work with BNO085
 
