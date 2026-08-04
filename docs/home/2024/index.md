@@ -32,7 +32,24 @@ These are the major achievements divided by area:
 - Nadota (@Ale-Coeto)
 
 ## [Manipulation](Manipulation/index.md)
-- Nadota (@deivideich, @emilianh)
+## Placing Algorithm with Gaussian Distribution
+
+To optimally place objects, we:
+
+1. **Isolate the Table Surface**:
+   - Use **RANSAC** to extract the table plane from 3D point cloud data.
+
+2. **Generate a Heat Map**:
+   - Apply a **Gaussian distribution** over the surface to create a heat map highlighting open spaces.
+
+3. **Select Optimal Placement**:
+   - Choose the area with the highest value on the heat map as the placing pose.
+
+4. **Plan Collision-Free Trajectory**:
+   - Use **MoveIt!** to plan a safe path to the placing pose.
+
+This concise approach ensures efficient space utilization and safe object placement.
+
 
 ## [Navigation](Navigation/index.md)
 - Nadota (@deivideich, @Chapa-1810)
