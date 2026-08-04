@@ -1,6 +1,6 @@
 # Sensor Overview
 
-The following sensors were used in Rescue Maze 2023:
+The following sensors were used in Rescue Maze 2024:
 
 - Time of flight distance sensor: [VLX53L0X](./VLX53L0X.md) (Adafruit)
 - RGB Color Sensor: [TCS34725](./TCS34725.md) (Adafruit)
