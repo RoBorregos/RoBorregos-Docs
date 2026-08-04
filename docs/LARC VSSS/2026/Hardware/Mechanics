@@ -1,0 +1,12 @@
+# Mechanics
+
+## About mechanics
+Mechanics become harder when dimensions start to shrink. In the LARC VSSS competition, dimensions cannot pass the
+75*75*75mm constraint (+5mm if you use uniform ~??), which means that EACH MILIMETER MATTERRRRSSSSS.
+
+
+## Objective
+There are three key elements that must be considered in the space distribution: Motors, Wheels & Useful Space for PCB. 
+Other optional elements are: 
+- Socket (Hollow space like a 'C' to carry the ball) -HIGHLY RECOMENDABLE-
+- Kicker System -NEEDS A LOT OF TIME FOR PREPARATION-
