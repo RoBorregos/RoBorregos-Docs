@@ -9,7 +9,7 @@ This control has as reference the speed calculated with the ticks or interruptio
 The encoder could be said to have an infrared that connects from side to side, so every time something passes through the middle of this "laser" there is an interruption. To get an approximation of how many ticks there are in a revolution you can make a code that counts the interrupts on the required pin with the arduino function attachInterrupt().
 
 attachInterrupt() function:
-[here](https://www.arduino.cc/reference/en/language/functions/external-interrupts/attachinterrupt/)
+[here](https://docs.arduino.cc/language-reference/en/functions/external-interrupts/attachInterrupt/)
 
 
 In this way the speed of each motor is taken out so that the PID control allows to increase the pwm variable to reach the desired speed so that all motors go at the same speed.
